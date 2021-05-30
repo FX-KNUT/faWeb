@@ -16,6 +16,9 @@ const Header = () => {
           <li>
             <a href="#/location">Location</a>
           </li>
+          <li>
+            <a href="#/community">Community</a>
+          </li>
         </ul>
       </span>
     </nav>

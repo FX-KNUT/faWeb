@@ -3,6 +3,7 @@ import Home from './Home.js';
 import Profile from './Profile.js';
 import Introduction from './Introduction.js';
 import Location from './Location.js';
+import Community from './Community.js';
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,9 @@ const AppRouter = () => {
       </Route>
       <Route exact path="/location">
         <Location />
+      </Route>
+      <Route exact path="/community">
+        <Community />
       </Route>
     </Router>
   );

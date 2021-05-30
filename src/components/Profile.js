@@ -1,19 +1,6 @@
 const Profile = () => {
   return (
     <div className="main-profile-wrapper">
-      <div className="main-profile-header">
-        <table>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <div className="main-profile-content">
         <table>
           <thead className="main-profile-content-thead">
