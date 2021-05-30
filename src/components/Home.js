@@ -1,7 +1,7 @@
 const Home = () => {
   return (
-    <div class="main-home-wrapper">
-      <div class="main-home-header">
+    <div className="main-home-wrapper">
+      <div className="main-home-header">
         <pre>
           <h2>안녕하십니까!</h2>
           <h3>한국교통대학교 소프트웨어학과</h3>
@@ -9,7 +9,7 @@ const Home = () => {
           <h2>f(x)입니다.</h2>
         </pre>
       </div>
-      <div class="main-home-content">
+      <div className="main-home-content">
         <pre>
           <h2>하루를 잘 보내고 계신가요?</h2>
           <h3>날씨가 많이 더워지고 있습니다.</h3>
