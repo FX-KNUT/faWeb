@@ -1,9 +1,16 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
+  color: white;
 }
 
 :lang(ko) {
   font-family: 'Noto Sans KR', serif;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-header {
@@ -22,11 +29,12 @@
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   transition: opacity 0.2s ease-in-out;
+  font-size: 1rem;
   line-height: 100%;
 }
 
@@ -56,7 +64,7 @@ header::after {
 }
 
 header ul > li:hover {
-  background: white;
+  opacity: 0.4;
 }
 
 li {
@@ -84,16 +92,17 @@ header nav p {
 }
 
 main {
-  height: calc(100vh - 4.8rem);
+  position: relative;
+  top: 8vh;
+  height: calc(100vh - 8vh);
   overflow: auto;
 }
 
 .main-home-wrapper {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 8vh);
   padding: 0 10vw;
   float: left;
-  background: #FFCDD2;
 }
 
 .main-home-header {
@@ -124,31 +133,248 @@ pre {
 .main-introduction {
   width: 100%;
   height: 100%;
-  background: rgb(133, 114, 168);
 }
 
-.main-profile-wrapper {
+.main-introduction-wrapper {
+  position: relative;
+  top: 4vh;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 4vh);
   padding: 0 10vw;
   float: left;
-  background: rgb(37, 37, 37);
+}
+
+.main-introduction-content {
+  color: white;
+  height: 90%;
+  background: #6c6e94;
+  padding: 3vh 2vw;
+}  
+
+.main-profile-wrapper {
+  position: relative;
+  top: 4vh;
+  width: 100%;
+  height: calc(100% - 4vh);
+  padding: 0 10vw;
+  float: left;
 }
 
 .main-profile-content {
-  height: 90%;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  height: 80%;
   background: #9dd9fc;
-  padding: 5vh 5vw;
+  padding: 3vh 3vw;
+  grid-template-columns: 20vw 20vw 20vw;
+  grid-template-rows: 30vh 30vh;
+  column-gap: 3vw;
+  row-gap: 4vh;
+}
+
+.main-profile-content-table {
+  height: 100%;
+  box-shadow: -2px -2px 4px .5px rgba(0, 0, 0, .05);
+}
+
+.main-profile-content-table tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-profile-content-thead {
+  height: 20%;
+}
+
+.main-profile-content-thead td {
+  margin: 0 1vw;
+}
+
+.main-profile-content-tfoot td {
+  margin: 0 1vw;
+}
+
+.main-profile-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2vw;
+  height: 10%;
+  background:rgb(233, 141, 111);
+}
+
+.main-profile-pagination button {
+  height: 4vh;
+  margin: 8vw;
+  background:rgb(233, 141, 111);
+  text-align: center;
+  border-style: none;
+}
+
+.main-profile-pagination button:hover {
+  opacity: 0.2;
+}
+
+.main-profile-pagination-start {
+
+}
+
+.main-profile-pagination-ul {
+  padding: 0;
+  list-style: none;
+}
+
+.main-profile-pagination li {
+  padding: 2vw;
+}
+
+.main-profile-pagination li:hover {
+  opacity: 0.2;
+}
+
+.main-profile-pagination-end {
+
 }
 
 .main-location {
   width: 100%;
   height: 100%;
+}
+
+.main-location-wrapper {
+  position: relative;
+  top: 4vh;
+  width: 100%;
+  height: calc(100% - 4vh);
+  padding: 0 10vw;
+  float: left;
+}
+
+.main-location-content {
+  color: white;
+  height: 90%;
+  background: #ec9bc3;
+  padding: 3vh 2vw;
+}  
+
+.main-community-wrapper {
+  position: relative;
+  top: 4vh;
+  width: 100%;
+  height: calc(100% - 4vh);
+  padding: 0 10vw;
+  float: left;
+}
+
+.main-community-content {
+  color: white;
+  display: grid;
+  height: 80%;
+  background: #e9c295;
+  padding: 3vh 2vw;
+  grid-template-rows: 6% 90% 4%;
+}  
+
+.main-community-content-span {
+  display: flex;
+  align-items: center;
+}
+
+.main-community-posts {
+  padding: 2vh 2vw;
+}
+
+.main-community-posts div {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-community-functions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 2rem 0 0;
+}
+
+.main-community-functions button {
+  border-style: none;
+  background-color: inherit;
+  color: black;
+}
+
+.main-community-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2vw;
+  height: 10%;
+  background:rgb(241, 168, 208);
+}
+
+.main-community-pagination button {
+  height: 4vh;
+  margin: 8vw;
+  background: inherit;
+  text-align: center;
+  border-style: none;
+}
+
+.main-community-pagination button:hover {
+  opacity: 0.2;
+}
+
+.main-community-pagination-start {
+
+}
+
+.main-community-pagination-ul {
+  padding: 0;
+  list-style: none;
+}
+
+.main-community-pagination li {
+  padding: 2vw;
+}
+
+.main-community-pagination li:hover {
+  opacity: 0.2;
+}
+
+.main-community-pagination-end {
+
+}
+
+.home {
+  background: #FFCDD2;
+}
+
+.introduction {
+  background: rgb(133, 114, 168);
+}
+
+.profile {
+  background: rgb(37, 37, 37);
+}
+
+.location {
   background: rgb(143, 214, 224);
 }
 
-.main-community {
-  width: 100%;
-  height: 100%;
+.community {
   background: rgb(245, 244, 175);
+}
+
+@media (max-width: 960px), (max-height: 720px) /*, (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px), (max-height: 480px) /*, (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
+  body {
+    font-size: 9px;
+  }
 }

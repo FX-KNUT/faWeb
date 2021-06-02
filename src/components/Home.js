@@ -1,4 +1,8 @@
+import { store } from './App';
+
 const Home = () => {
+  store.dispatch({ type: { loc: 'home' } });
+
   return (
     <div className="main-home-wrapper">
       <div className="main-home-header">

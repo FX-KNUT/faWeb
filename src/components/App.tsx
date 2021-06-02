@@ -11,12 +11,25 @@ function App() : JSX.Element {
 
   const [init, setInit] = useState(true);
 
+  const locChanged = () => {
+    const { loc } = store.getState();
+    const App = document.querySelector(".App");
+    App!.className = "App " + loc;
+  };
+
+  const changeHandler = {
+    locChangeHandler: locChanged
+  };
+
+  store.subscribe(changeHandler.locChangeHandler);
+
   useEffect(() => {
+    /* ~~ */
     setInit(false);
   }, []);
 
   return (
-    <div className="App">
+    <div id="App" className="App">
       <header>
         <Header />
       </header>
