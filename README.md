@@ -2,6 +2,7 @@
 
 # 20210602
 gh-pages로 대체합니다.
+https://fx-knut.github.io/fxWeb
 
 #
 # 20210530
