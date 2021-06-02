@@ -1,4 +1,4 @@
-import { store } from './App';
+import { store } from './App.tsx';
 
 const Community = () => {
   store.dispatch({ type: { loc: 'community' } });

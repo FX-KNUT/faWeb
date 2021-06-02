@@ -1,4 +1,4 @@
-import { store } from './App';
+import { store } from './App.tsx';
 
 const Profile = () => {
   store.dispatch({ type: { loc: 'profile' } });

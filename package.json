@@ -1,13 +1,13 @@
 {
-  "name": "faweb",
+  "name": "fxweb",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://iiy4383.github.io/fxweb",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
-    "gh-pages": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -24,7 +24,9 @@
     "eject": "react-scripts eject",
     "build-start": "cd build && index.html",
     "go": "react-scripts build && react-scripts start",
-    "total": "react-scripts build && cd build && index.html && cd ../ && react-scripts start"
+    "total": "react-scripts build && cd build && index.html && cd ../ && react-scripts start",
+    "deploy": "npm run build && gh-pages -d build",
+    "only-deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     "@types/node": "^12.20.13",
     "@types/react": "^17.0.8",
     "@types/react-dom": "^17.0.5",
+    "gh-pages": "^3.2.0",
     "prettier": "^2.3.0"
   }
 }
