@@ -33,7 +33,7 @@ function App() : JSX.Element {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="main">
         {init ? "Loading..." : <Router />}
       </main>
     </div>

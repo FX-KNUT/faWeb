@@ -3,7 +3,7 @@ const Header = () => {
     <nav>
       <span>
         <p id="nav_p"></p>
-        <ul>
+        <ul className="header-ul">
           <li>
             <a href=".">Home</a>
           </li>

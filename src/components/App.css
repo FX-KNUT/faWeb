@@ -13,29 +13,36 @@
   height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 header {
   position: fixed;
+  min-width: 1052px;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   transition: opacity 0.2s ease-in-out;
   font-size: 1rem;
   line-height: 100%;
+}
+
+.header-ul {
+  position: relative;
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .header-ul {
+    width: 100vw;
+    max-height: 72px;
+    transition: max-height .8s ease-out;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-ul:hover {
+    max-height: 360px;
+    transition: max-height .5s ease-in;
+  }
 }
 
 header nav {
@@ -145,11 +152,139 @@ pre {
 }
 
 .main-introduction-content {
+  position: relative;
+  display: grid;
   color: white;
+  width: 100%;
   height: 90%;
   background: #6c6e94;
   padding: 3vh 2vw;
+  grid-template-columns: 40% 60%;
+  overflow: hidden;
 }  
+
+.main-introduction-content-professor {
+  position: relative;
+  padding: 3vh 2vw;
+  width: 100%;
+  height: 100%;
+}
+
+.main-introduction-content-professor-imgdiv {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main-introduction-content-professor-imgdiv-innerdiv {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 260px;
+  height: 260px;
+  background-image: url(./res/image/shine.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-introduction-content-professor-name {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-height: 500px) {
+  .main-introduction-content-professor-name {
+    top: 60%;
+  }
+}
+
+@media (max-height: 420px) {
+  .main-introduction-content-professor-name {
+    top: 63%;
+  }
+}
+
+.main-introduction-content-professor-prevbtn,
+.main-introduction-content-professor-nextbtn {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  padding: 1rem;
+  margin: 2rem 2rem;
+  background-color: inherit;
+}
+
+.main-introduction-content-professor-nextbtn {
+  margin: 2rem 2rem;
+  left: unset;
+  right: 20%;
+}
+
+@media (max-width: 1280px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 172px;
+    height: 172px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    padding: .5rem;
+  }
+}
+
+@media (max-width: 885px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    margin: .5rem;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.main-introduction-content-dept_software_wrapper::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 90%;
+  background-color: pink;
+  opacity: 0.4;
+}
+
+.main-introduction-content-dept_software {
+  display: flex;
+  position: relative;
+  height: 100%;
+  padding: 4vh 4vw;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 5vh;
+}
 
 .main-profile-wrapper {
   position: relative;
@@ -367,7 +502,7 @@ pre {
   background: rgb(245, 244, 175);
 }
 
-@media (max-width: 960px), (max-height: 720px) /*, (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
+@media (max-width: 960px), (max-height: 720px) /*, (orientation: landscape) */ /* 가로 모드일 때 지정 */ {  
   body {
     font-size: 12px;
   }
@@ -376,5 +511,17 @@ pre {
 @media (max-width: 600px), (max-height: 480px) /*, (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
   body {
     font-size: 9px;
+  }
+}
+
+@media (max-height: 600px) {
+  .main-introduction-content {
+    top: 3vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .main-introduction-content {
+    top: 4.5vh;
   }
 }
