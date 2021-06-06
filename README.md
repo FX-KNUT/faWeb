@@ -5,6 +5,11 @@ PM | 신이종(Leejong Shin)
 Front-end   | 신이종, 민경호(Kyungho Min)
 Back-end    | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210606
+introduction 아주 약간 추가했습니다.
+![Screenshot_1](https://user-images.githubusercontent.com/56120315/120928232-bedc7f80-c71e-11eb-96b3-8437b3ade090.png)
+
+
 #
 # 20210602
 gh-pages로 대체합니다.
