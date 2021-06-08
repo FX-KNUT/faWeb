@@ -23,6 +23,7 @@ header {
   transition: opacity 0.2s ease-in-out;
   font-size: 1rem;
   line-height: 100%;
+  z-index: 99;
 }
 
 .header-ul {
@@ -388,11 +389,35 @@ pre {
 }
 
 .main-location-content {
+  position: relative;
   color: white;
   height: 90%;
   background: #ec9bc3;
   padding: 3vh 2vw;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  overflow: hidden;
 }  
+
+.main-location-map {
+  display: relative;
+  overflow: hidden;
+}
+
+.main-location-map-kakaoAPImap {
+  position: relative;
+  margin: 0 auto;
+}
+
+.main-location-map-description {
+  position: relative;
+  top: 80%;
+  text-align: center;
+}
+
+.main-location-coming_way {
+  padding: 1rem 1rem;
+}
 
 .main-community-wrapper {
   position: relative;
@@ -417,15 +442,57 @@ pre {
   align-items: center;
 }
 
-.main-community-posts {
-  padding: 2vh 2vw;
+.main-community-content-span:hover,
+.main-community-posts-no:hover,
+.main-community-posts-title:hover,
+.main-community-posts-author:hover {
+  opacity: 0.4;
 }
 
-.main-community-posts div {
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main-community-posts {
+  padding: 2vh 2vw;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% repeat(15, 6%);
+  text-align: center;
+}
+
+.main-community-posts-no,
+.main-community-posts-title,
+.main-community-posts-author,
+.main-community-posts-no-example,
+.main-community-posts-title-example,
+.main-community-posts-author-example {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.main-community-posts-no,
+.main-community-posts-title,
+.main-community-posts-author {
+  box-shadow: 6px 2px 2px #e9c230;
+  /* border-style: solid;
+  border-color: transparent;
+  border-radius: 0px 0px 6px 0px; */
+}
+
+.main-community-posts-no-example:hover,
+.main-community-posts-title-example:hover,
+.main-community-posts-author-example:hover {
+  color: darkgoldenrod;
+}  
+
+.main-community-posts-title-example {
+  margin: auto 0;
+  text-align: left;
+  padding: 0 1.5rem;
+}
+
+.main-community-posts div:hover,
+.main-community-functions button:hover{
+  color: #43a6df;
 }
 
 .main-community-functions {
