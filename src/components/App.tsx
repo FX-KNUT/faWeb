@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import Header from './Header.js';
 import reducer from './Reducer';
 import Router from "./Router.js";
-import Login from "./Login.tsx";
+import Login from "./Login";
 import { useEffect, useState } from 'react';
 
 export const store = createStore(reducer);
@@ -31,15 +31,17 @@ function App(): JSX.Element {
 
   return (
     <div id="App" className="App">
-      <div id="modal">
-        <header>
-          <Header />
-        </header>
-        <main className="main">
-          {init ? "Loading..." : <Router />}
-        </main>        
+      <header>
+        <Header />
+      </header>
+      <main className="main">
+        {init ? "Loading..." : <Router />}
+      </main>   
+      <div id="modal" className="modal"> 
+        <div id="login" className="login">
+          <Login />        
+        </div>       
       </div>
-      <Login />
     </div>
   );
 }

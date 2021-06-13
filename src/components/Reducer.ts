@@ -1,5 +1,6 @@
 interface state {
-  loc: string
+  loc: string,
+  loggedIn: boolean
 }
 
 interface action {
@@ -8,7 +9,7 @@ interface action {
   }
 }
 
-const reducer = (state: state = {loc: ''}, action: action): state => {
+const reducer = (state: state = {loc: '', loggedIn: false}, action: action): state => {
   switch (action.type.loc) {
     case "home":
       state.loc = 'home';

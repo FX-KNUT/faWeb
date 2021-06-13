@@ -10,7 +10,7 @@ const Home = () => {
           <h2>안녕하십니까!</h2>
           <h3>한국교통대학교 소프트웨어학과</h3>
           <h3>웹 어플리케이션 동아리</h3>
-          <h2>f(x)입니다.</h2>
+          <h3>f(x)입니다.</h3>
         </pre>
       </div>
       <div className="main-home-content">
