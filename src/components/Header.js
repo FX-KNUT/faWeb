@@ -1,8 +1,11 @@
+import icon from './res/image/temp_icon.png';
+
 const Header = () => {
+  let login_logout = 'login';
+
   return (
     <nav>
       <span>
-        <p id="nav_p"></p>
         <ul className="header-ul">
           <li>
             <a href=".">Home</a>
@@ -20,6 +23,10 @@ const Header = () => {
             <a href="#/community">Community</a>
           </li>
         </ul>
+      </span>
+      <span id="header-right">
+        <p id="header-right-login">{login_logout}</p>
+        <img id="header-right-icon" src={icon} alt="your icon" />
       </span>
     </nav>
   );
