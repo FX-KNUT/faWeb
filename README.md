@@ -10,7 +10,11 @@ Webpack 설정을 다소 건드려야하여 기존 CRA로부터 Eject 수행하�
 Modal 기능의 아주 기본적인 부분과
 일부 Responsive 관련한 Media 쿼리의 버그 등을
 추가 및 수정하였습니다.
+
 ![Screenshot_1](https://user-images.githubusercontent.com/56120315/121804102-b5ec3080-cc7f-11eb-974d-00f87accbc45.png)
+
+![Screenshot_3](https://user-images.githubusercontent.com/56120315/121804167-ffd51680-cc7f-11eb-98d3-cabc66deddf4.png)
+
 ![Screenshot_2](https://user-images.githubusercontent.com/56120315/121804103-b71d5d80-cc7f-11eb-830e-9302e20c9849.png)
 
 # 20210606
