@@ -28,8 +28,8 @@
 .login {
   display: none;
   position: absolute;
-  width: 50vw;
-  height: 70vh;
+  width: 20vw;
+  height: 45vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -66,43 +66,30 @@
   height: 100%;
 }
 
-#login-thead-login_p {
-  font-weight: 600;
+#login-header {
+  padding: 0 0 2rem 2rem;
+}
+
+.login-p {
+  padding: .5rem 1rem;
   margin: unset;
+}
+
+.login-input {
+  margin: 1rem;
 }
 
 #login-X_Btn {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 3rem;
+  right: 2.5rem;
 }
 
-#login-wrapper table {
-  width: 100%;
-  height: 100%;
-  text-indent: unset;
-  border-collapse: unset;
-  border-spacing: unset;
-  border-color: unset;
-}
-
-#login-wrapper tbody tr {
-}
-
-#login-wrapper tbody p {
-  padding: 0 1rem;
-  margin: unset;
-}
-
-#login-wrapper tbody input {
-  padding: 1px .5rem;
-  margin: 0 .5rem;
-}
-
-#login-wrapper tfoot {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+#login-submitBtn {
+  position: relative;
+  display: block;
+  top: 15%;
+  margin: 0 auto;
 }
 
 header {
