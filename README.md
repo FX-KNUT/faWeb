@@ -5,6 +5,11 @@ PM | 신이종(Leejong Shin)
 Front-end   | 신이종, 민경호(Kyungho Min)
 Back-end    | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210614
+Login.tsx 보강중입니다. Responsive 적용 필요합니다.
+![Screenshot_1](https://user-images.githubusercontent.com/56120315/121880703-49d5ff00-cd49-11eb-8840-357dd65a94fa.png)
+
+
 # 20210613
 Webpack 설정을 다소 건드려야하여 기존 CRA로부터 Eject 수행하였고,
 Modal 기능의 아주 기본적인 부분과
