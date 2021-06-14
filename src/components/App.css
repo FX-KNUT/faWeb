@@ -85,10 +85,13 @@
   right: 2.5rem;
 }
 
-#login-submitBtn {
+#login-bottomBtnDiv {
   position: relative;
-  display: block;
+  display: flex;
   top: 15%;
+}
+
+#login-bottomBtnDiv > button {
   margin: 0 auto;
 }
 

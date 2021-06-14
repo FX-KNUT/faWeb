@@ -24,11 +24,33 @@ const Login = (): JSX.Element => {
     const login: HTMLElement | null = document.querySelector("#login");
 
     // 굳이 Inline Style을 지정한다면 그나마 좀 더 괜찮게 하는 방법입니다.
-    const btnStyle = {  // 이런 객체엔 Typing하지 않아도 됩니다.
+    const resetBtnStyle = {     // 이런 객체엔 Typing하지 않아도 됩니다.
+        color: "white",
+        background: "blueviolet",
+        width: "5rem",
+        padding: ".125rem .5rem",
+        border: "1px solid white",
+        borderRadius: ".25rem",
+        fontSize: "1rem",
+        lineHeight: 1.5
+    };
+
+    const submitBtnStyle = {    // React Native에서 이 방식을 사용합니다.
         color: "white",
         background: "purple",
-        padding: ".375rem .75rem",
+        width: "5rem",
+        padding: ".125rem .875rem",
         border: "1px solid purple",
+        borderRadius: ".25rem",
+        fontSize: "1rem",
+        lineHeight: 1.5
+    };
+
+    const xBtnStyle = {
+        color: "white",
+        background: "#1E1F21",
+        padding: ".125rem .5rem",
+        border: "1px solid silver",
         borderRadius: ".25rem",
         fontSize: "1rem",
         lineHeight: 1.5
@@ -39,11 +61,11 @@ const Login = (): JSX.Element => {
     // DOM에 마우스를 올려 해당 객체의 타입이 무엇인지 확인하면 쉽게 알 수 있습니다.
 
     const onIDChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setId(e.target.value)
+        setId(e.target.value);
     };
 
     const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setPw(e.target.value)
+        setPw(e.target.value);
     };
 
     const onXClicked = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -51,6 +73,11 @@ const Login = (): JSX.Element => {
         modal?.classList.toggle("show");
         login?.classList.toggle("show");
     };
+
+    const onResetClicked = (e: React.MouseEvent<HTMLButtonElement>): void => {
+        setId('');
+        setPw('');
+    }
 
     // axios를 이렇게 사용하는 방법도 좋지만,
     // axios를 좀 더 날렵하게 custom하는 방법도 요긴하게 사용될 수 있습니다.
@@ -83,12 +110,15 @@ const Login = (): JSX.Element => {
         <div id="login-wrapper">
             <form action="" method="post" onSubmit={onSubmit}>
                 <p id="login-header" className="login-p">로그인</p>
-                <button onClick={onXClicked} id="login-X_Btn">X</button>
+                <button onClick={onXClicked} style={xBtnStyle} id="login-X_Btn">X</button>
                 <p id="login-id" className="login-p">ID</p>
                 <input type="text" value={id} className="login-input" onChange={onIDChange} />    
                 <p id="login-pw" className="login-p">Password</p>
                 <input type="password" name="" id="" className="login-input" value={pw} onChange={onPasswordChange} />
-                <button id="login-submitBtn" style={btnStyle} type="submit">Sign In</button>
+                <div id="login-bottomBtnDiv">
+                    <button id="login-resetBtn" style={resetBtnStyle} onClick={onResetClicked}>Reset</button>
+                    <button id="login-submitBtn" style={submitBtnStyle} type="submit">Sign In</button>
+                </div>
             </form>
         </div>
     );
