@@ -5,6 +5,10 @@ PM | 신이종(Leejong Shin)
 Front-end   | 신이종, 민경호(Kyungho Min)
 Back-end    | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210622
+gh-pages published 되었습니다.
+webpack 설정 계속 만져봐야합니다. img 태그의 src 적용이 올바르게 되지 않습니다.
+
 # 20210614
 Login.tsx 보강중입니다. Responsive 적용 필요합니다.
 ![Screenshot_1](https://user-images.githubusercontent.com/56120315/121880703-49d5ff00-cd49-11eb-8840-357dd65a94fa.png)
