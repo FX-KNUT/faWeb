@@ -1,45 +1,36 @@
-import { store } from "./App.tsx";
-import Pro from "./Pro";
-import shine from "./res/image/shine.png";
+const Profile = ({ profile }) => {
+  const page = 1;
+  //   const [page, setPage] = useState(1);
 
-const proList = [
-  {
-    id: "1234567",
-    name: "김김김",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-];
-
-const Profile = () => {
-  store.dispatch({ type: { loc: "profile" } });
-
-  // let page = 1;
-  // let arr = [1, 2, 3, 4, 5, 6];
-
-  // arr의 map 함수 내 _는 ele 인자를 사용하지 않겠다는 것을
-  // 암시적으로 나타내는 minify입니다. 일종의 convention이니,
-  // 익혀두시면 다음에 다른 코드를 볼 때 또 보실 일이 있을 겁니다.
-
+  const { id, name, img, start_date, end_date } = profile;
   return (
-    <div className="main-profile-wrapper">
-      <div className="main-profile-content">
-        {proList.map((profile) => (
-          <Pro profile={profile} />
-        ))}
-      </div>
-      <div className="main-profile-pagination">
-        <button className="main-profile-pagination-start">처음으로</button>
-        <ul className="main-profile-pagination-ul">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-        <button className="main-profile-pagination-end">끝으로</button>
-      </div>
-    </div>
+    <table className="main-profile-content-table">
+      <thead className="main-profile-content-thead" page={page} id={id}>
+        <tr>
+          <td className="main-profile-content-thead-id">{id}</td>
+          <td className="main-profile-content-thead-name">{name}</td>
+        </tr>
+      </thead>
+      <tbody className="main-profile-content-tbody" page={page} id={id}>
+        <tr>
+          <td className="main-profile-content-tbody-img">
+            <img src={img} alt={img} />
+          </td>
+        </tr>
+      </tbody>
+      <tfoot className="main-profile-content-tfoot" page={page} id={id}>
+        <tr>
+          <td className="main-profile-content-tfoot-start">가입일</td>
+          <td className="main-profile-content-tfoot-start-date">
+            {start_date}
+          </td>
+        </tr>
+        <tr>
+          <td className="main-profile-content-tfoot-end">탈퇴일</td>
+          <td className="main-profile-content-tfoot-end-date">{end_date}</td>
+        </tr>
+      </tfoot>
+    </table>
   );
 };
 

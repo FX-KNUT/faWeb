@@ -1,10 +1,10 @@
-import { Switch, Route } from 'react-router-dom';
-import Home from './Home.js';
-import Profile from './Profile.js';
-import Introduction from './Introduction.js';
-import Location from './Location.js';
-import Community from './Community.js';
-import NotFound from './NotFound.js';
+import { Switch, Route } from "react-router-dom";
+import Home from "./Home.js";
+import ProfileList from "./ProfileList.js";
+import Introduction from "./Introduction.js";
+import Location from "./Location.js";
+import Community from "./Community.js";
+import NotFound from "./NotFound.js";
 
 const AppRouter = () => {
   return (
@@ -16,7 +16,7 @@ const AppRouter = () => {
         <Introduction />
       </Route>
       <Route exact path="/profile">
-        <Profile />
+        <ProfileList />
       </Route>
       <Route exact path="/location">
         <Location />
