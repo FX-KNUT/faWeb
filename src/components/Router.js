@@ -1,14 +1,15 @@
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Home.js';
 import Profile from './Profile.js';
 import Introduction from './Introduction.js';
 import Location from './Location.js';
 import Community from './Community.js';
+import NotFound from './NotFound.js';
 
 const AppRouter = () => {
   return (
-    <Router>
-      <Route exact path="/">
+    <Switch>
+      <Route exact path="/fxweb">
         <Home />
       </Route>
       <Route exact path="/introduction">
@@ -23,7 +24,8 @@ const AppRouter = () => {
       <Route exact path="/community">
         <Community />
       </Route>
-    </Router>
+      <Route component={NotFound}></Route>
+    </Switch>
   );
 };
 

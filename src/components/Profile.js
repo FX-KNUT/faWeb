@@ -1,39 +1,22 @@
-import { store } from './App.tsx';
+import { store } from "./App.tsx";
+import Pro from "./Pro";
+import shine from "./res/image/shine.png";
+
+const proList = [
+  {
+    id: "1234567",
+    name: "김김김",
+    img: shine,
+    start_date: "2021-01-01",
+    end_date: "2021-12-31",
+  },
+];
 
 const Profile = () => {
-  store.dispatch({ type: { loc: 'profile' } });
+  store.dispatch({ type: { loc: "profile" } });
 
-  let page = 1;
-  let arr = [1, 2, 3, 4, 5, 6];
-
-  const Content = (key) => (
-    <table className="main-profile-content-table">
-      <thead className="main-profile-content-thead" page={page} id={key}>
-        <tr>
-          <td className="main-profile-content-thead-id">1444018</td>
-          <td className="main-profile-content-thead-name">신이종</td>
-        </tr>
-      </thead>
-      <tbody className="main-profile-content-tbody" page={page} id={key}>
-        <tr>
-          <td className="main-profile-content-tbody-img">이미지</td>
-        </tr>
-      </tbody>
-      <tfoot className="main-profile-content-tfoot" page={page} id={key}>
-        <tr>
-          <td className="main-profile-content-tfoot-start">가입일</td>
-          <td className="main-profile-content-tfoot-start-date">2021-06-02</td>
-        </tr>
-        <tr>
-          <td className="main-profile-content-tfoot-end">탈퇴일</td>
-          <td className="main-profile-content-tfoot-end-date">2021-06-03</td>
-        </tr>
-      </tfoot>
-    </table>
-  );
-
-  console.log(Content);
-  console.log(arr);
+  // let page = 1;
+  // let arr = [1, 2, 3, 4, 5, 6];
 
   // arr의 map 함수 내 _는 ele 인자를 사용하지 않겠다는 것을
   // 암시적으로 나타내는 minify입니다. 일종의 convention이니,
@@ -42,8 +25,8 @@ const Profile = () => {
   return (
     <div className="main-profile-wrapper">
       <div className="main-profile-content">
-        {arr.map((_, idx) => (
-          <Content key={idx} />
+        {proList.map((profile) => (
+          <Pro profile={profile} />
         ))}
       </div>
       <div className="main-profile-pagination">
