@@ -11,6 +11,8 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 - pagination: useState, useEffect, slice를 활용해 구현
   ![image](https://user-images.githubusercontent.com/57670160/123293063-9e9a2680-d54e-11eb-9371-30edec6b2fde.png)
   ![image](https://user-images.githubusercontent.com/57670160/123293120-ace84280-d54e-11eb-86d6-9df05d3aa505.png)
+- 해야할 것: pagination 컴포넌트에서 클릭된 페이지에 색을 주는 작업.
+- 다음에 할 컴포넌트: location - 지도 api를 가져와서 학교에 위성뷰를 띄우면 좋을 것 같음.
 
 # 20210624
 
