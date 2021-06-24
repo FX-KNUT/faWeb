@@ -32,10 +32,18 @@ const ProfileList = () => {
       <div className="main-profile-pagination">
         <button className="main-profile-pagination-start">처음으로</button>
         <ul className="main-profile-pagination-ul">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+          <li>
+            <span>1</span>
+          </li>
+          <li>
+            <span>2</span>
+          </li>
+          <li>
+            <span>3</span>
+          </li>
+          <li>
+            <span>4</span>
+          </li>
         </ul>
         <button className="main-profile-pagination-end">끝으로</button>
       </div>

@@ -500,8 +500,8 @@ pre {
   opacity: 0.2;
 }
 
-.main-profile-pagination-start {
-}
+/* .main-profile-pagination-start {
+} */
 
 .main-profile-pagination-ul {
   padding: 0;
@@ -510,6 +510,9 @@ pre {
 
 .main-profile-pagination li {
   padding: 2vw;
+}
+
+.main-profile-pagination-ul > li > span {
   cursor: pointer;
 }
 
