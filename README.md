@@ -8,7 +8,8 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
 # 20210624
 
-Header를 navlink로 바꾸고 Profile을 서버에서 json으로 받기만 하면 출력가능.
+Header를 navlink로 바꿈.
+Profile을 서버에서 json으로 받기만 하면 출력가능.
 ![image](https://user-images.githubusercontent.com/57670160/123215477-746f4700-d503-11eb-8d36-e5f2f7e55cf1.png)
 
 # 20210622
