@@ -1,10 +1,11 @@
+// 각각의 Profile에 대한 컴포넌트
 const Profile = ({ profile }) => {
   const page = 1;
   //   const [page, setPage] = useState(1);
 
-  const { id, name, img, start_date, end_date } = profile;
+  const { idx, id, name, img, start_date, end_date } = profile;
   return (
-    <table className="main-profile-content-table">
+    <table className="main-profile-content-table" id={idx}>
       <thead className="main-profile-content-thead" page={page} id={id}>
         <tr>
           <td className="main-profile-content-thead-id">{id}</td>

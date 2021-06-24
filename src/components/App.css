@@ -205,11 +205,11 @@ ul::after {
   margin: unset;
   padding: 0 1.2rem;
 }
-/* 
-#header-right-login:hover,
-#header-right-icon:hover {
+
+#header-right-login:hover {
   opacity: 0.6;
-} */
+  cursor: pointer;
+}
 
 .account {
   font-size: 3rem;
@@ -500,9 +500,6 @@ pre {
   opacity: 0.2;
 }
 
-/* .main-profile-pagination-start {
-} */
-
 .main-profile-pagination-ul {
   padding: 0;
   list-style: none;
@@ -513,14 +510,17 @@ pre {
 }
 
 .main-profile-pagination-ul > li > span {
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
-.main-profile-pagination li:hover {
-  opacity: 0.2;
+.main-profile-pagination-ul > li > span {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.main-profile-pagination-end {
+.main-profile-pagination li span:hover {
+  color: white;
 }
 
 .main-location {

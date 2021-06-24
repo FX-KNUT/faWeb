@@ -6,6 +6,12 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210625
+
+- pagination: useState, useEffect, slice를 활용해 구현
+  ![image](https://user-images.githubusercontent.com/57670160/123293063-9e9a2680-d54e-11eb-9371-30edec6b2fde.png)
+  ![image](https://user-images.githubusercontent.com/57670160/123293120-ace84280-d54e-11eb-86d6-9df05d3aa505.png)
+
 # 20210624
 
 - Header를 navlink로 바꿈.
