@@ -6,6 +6,12 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210626
+
+- kakao 지도 api를 받아 위성뷰 띄움.
+  ![image](https://user-images.githubusercontent.com/57670160/123516150-a3d5ad80-d6d5-11eb-91be-1ac173d11d15.png)
+- 해야할 것: css작업, 길찾기(필요하다면)
+
 # 20210625
 
 - pagination: useState, useEffect, slice를 활용해 구현
