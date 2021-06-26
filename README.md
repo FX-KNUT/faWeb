@@ -11,6 +11,7 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 - kakao 지도 api를 받아 위성뷰 띄움.
   ![image](https://user-images.githubusercontent.com/57670160/123516150-a3d5ad80-d6d5-11eb-91be-1ac173d11d15.png)
 - 해야할 것: css작업, 길찾기(필요하다면)
+- 학교에 marker 생성.
 
 # 20210625
 
