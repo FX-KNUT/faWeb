@@ -1,7 +1,35 @@
-import { store } from './App.tsx';
+import { useEffect } from "react";
+import { store } from "./App.tsx";
+const { kakao } = window;
 
 const Location = () => {
-  store.dispatch({ type: { loc: 'location' } });
+  /**
+   * const [center, setCenter] = useState();
+   */
+
+  const center = [36.96911947843944, 127.8696547175743];
+
+  let lat = center[0];
+  let lon = center[1];
+
+  useEffect(() => {
+    let container = document.getElementById("map");
+    let options = {
+      center: new kakao.maps.LatLng(lat, lon),
+      level: 3,
+    };
+
+    const map = new window.kakao.maps.Map(container, options);
+
+    let markerPosition = new kakao.maps.LatLng(lat, lon);
+    let marker = new kakao.maps.Marker({
+      position: markerPosition,
+    });
+
+    marker.setMap(map);
+  }, []);
+
+  store.dispatch({ type: { loc: "location" } });
   // Google Map API는 유료이지만, Kakao API를 사용하면 무료입니다.
   // 동시에 아주 간단하게 구현할 수 있습니다.
   // 백엔드 단에서 로직을 구현하여 정보를 받아올지,
@@ -14,7 +42,7 @@ const Location = () => {
   return (
     <div className="main-location-wrapper">
       <div className="main-location-content">
-        <p>장소입니다.</p>
+        <div id="map" className="main-location-map"></div>
       </div>
     </div>
   );
