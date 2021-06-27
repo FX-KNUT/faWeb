@@ -27,7 +27,6 @@ const category = [
 
 const Header = () => {
   let login_logout = "login";
-  // const icon_img = document.querySelector('#header-right-icon');
   const modal = document.querySelector("#modal");
   const login = document.querySelector("#login");
 
@@ -37,11 +36,6 @@ const Header = () => {
     modal?.classList.toggle("show");
     login?.classList.toggle("show");
   };
-
-  // const onImgClicked = (e) => {
-  //   console.log(e);
-  //   console.log(icon_img);
-  // };
 
   return (
     <nav className="categoryBox">
@@ -59,12 +53,6 @@ const Header = () => {
         <p id="header-right-login" onClick={onLoginClicked}>
           {login_logout}
         </p>
-        {/* <img
-          id="header-right-icon"
-          src={icon}
-          alt="your icon"
-          onClick={onImgClicked}
-        /> */}
         <MdAccountCircle className="account" />
       </span>
     </nav>
