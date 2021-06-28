@@ -3,26 +3,30 @@ import { store } from "./App.tsx";
 const { kakao } = window;
 
 const Location = () => {
+  // 충청북도 충주시 대소원면 대학로 50, 중앙정보관동 2층
   const [center, setCenter] = useState([36.96911947843944, 127.8696547175743]);
-  let lat = center[0];
-  let lon = center[1];
-  const [searchCenter, setSearchCenter] = useState([]);
+
   useEffect(() => {
     let container = document.getElementById("map");
     let options = {
-      center: new kakao.maps.LatLng(lat, lon),
+      center: new kakao.maps.LatLng(center[0], center[1]),
       level: 3,
     };
 
     const map = new window.kakao.maps.Map(container, options);
 
     // marker
-    let markerPosition = new kakao.maps.LatLng(lat, lon);
+    let markerPosition = new kakao.maps.LatLng(center[0], center[1]);
     let marker = new kakao.maps.Marker({
       position: markerPosition,
     });
 
     marker.setMap(map);
+    var infowindow = new kakao.maps.InfoWindow({
+      content:
+        '<div style="width:150px;text-align:center;padding:6px 0;">동아리방</div>',
+    });
+    infowindow.open(map, marker);
 
     // 일반 지도와 스카이뷰로 지도 타입을 전활할 수 있는 지도 타입 컨트롤 생성
     const mapTypeControl = new kakao.maps.MapTypeControl();
@@ -31,7 +35,9 @@ const Location = () => {
     // 지도 확대 축소를 제어할 수 있는 줌 컨트롤 생성
     const zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-  }, []);
+
+    map.relayout();
+  }, [center]);
 
   store.dispatch({ type: { loc: "location" } });
   // Google Map API는 유료이지만, Kakao API를 사용하면 무료입니다.
@@ -47,20 +53,6 @@ const Location = () => {
     <div className="main-location-wrapper">
       <div className="main-location-content">
         <div id="map" className="main-location-map"></div>
-        <div>
-          출발지
-          <input
-            value={searchCenter}
-            onChange={(e) => setSearchCenter(e.target.value)}
-            name="searchCenter"
-          ></input>
-          도착지
-          <input
-            name="center"
-            onChange={(e) => setCenter(e.target.value)}
-            value={center}
-          ></input>
-        </div>
       </div>
     </div>
   );

@@ -10,6 +10,9 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
 - Location Component를 자세히 구현하는 작업
 - Profile에서 필요한 것: 서버와 연결, 서버에 요청, Pagination
+- Zoom Control과 Sky View Control띄움.
+- InfoWindow: 동아리방이라는 infoWindow 생성
+- relayout()으로 크기 키움.
 
 # 20210626
 

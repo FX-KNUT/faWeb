@@ -551,6 +551,7 @@ pre {
 .main-location-map {
   display: relative;
   overflow: hidden;
+  height: 72vh;
 }
 
 .main-location-map-kakaoAPImap {
