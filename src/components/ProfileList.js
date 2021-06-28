@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { store } from "./App.tsx";
 import Pagination from "./Pagination";
-
 import ProfilePage from "./ProfilePage";
 import shine from "./res/image/shine.png";
 

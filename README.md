@@ -6,6 +6,11 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210628
+
+- Location Component를 자세히 구현하는 작업
+- Profile에서 필요한 것: 서버와 연결, 서버에 요청, Pagination
+
 # 20210626
 
 - kakao 지도 api를 받아 위성뷰 띄움.

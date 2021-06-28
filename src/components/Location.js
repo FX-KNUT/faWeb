@@ -1,17 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { store } from "./App.tsx";
 const { kakao } = window;
 
 const Location = () => {
-  /**
-   * const [center, setCenter] = useState();
-   */
-
-  const center = [36.96911947843944, 127.8696547175743];
-
+  const [center, setCenter] = useState([36.96911947843944, 127.8696547175743]);
   let lat = center[0];
   let lon = center[1];
-
+  const [searchCenter, setSearchCenter] = useState([]);
   useEffect(() => {
     let container = document.getElementById("map");
     let options = {
@@ -21,12 +16,21 @@ const Location = () => {
 
     const map = new window.kakao.maps.Map(container, options);
 
+    // marker
     let markerPosition = new kakao.maps.LatLng(lat, lon);
     let marker = new kakao.maps.Marker({
       position: markerPosition,
     });
 
     marker.setMap(map);
+
+    // 일반 지도와 스카이뷰로 지도 타입을 전활할 수 있는 지도 타입 컨트롤 생성
+    const mapTypeControl = new kakao.maps.MapTypeControl();
+    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+    // 지도 확대 축소를 제어할 수 있는 줌 컨트롤 생성
+    const zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
   }, []);
 
   store.dispatch({ type: { loc: "location" } });
@@ -43,6 +47,20 @@ const Location = () => {
     <div className="main-location-wrapper">
       <div className="main-location-content">
         <div id="map" className="main-location-map"></div>
+        <div>
+          출발지
+          <input
+            value={searchCenter}
+            onChange={(e) => setSearchCenter(e.target.value)}
+            name="searchCenter"
+          ></input>
+          도착지
+          <input
+            name="center"
+            onChange={(e) => setCenter(e.target.value)}
+            value={center}
+          ></input>
+        </div>
       </div>
     </div>
   );
