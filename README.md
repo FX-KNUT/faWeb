@@ -13,6 +13,7 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 - Zoom Control과 Sky View Control띄움.
 - InfoWindow: 동아리방이라는 infoWindow 생성
 - relayout()으로 크기 키움.
+  ![image](https://user-images.githubusercontent.com/57670160/123584814-fff71980-d81c-11eb-9ff1-df617eabc728.png)
 
 # 20210626
 
