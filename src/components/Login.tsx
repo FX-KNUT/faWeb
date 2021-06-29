@@ -5,11 +5,9 @@ import { useState } from 'react';
 // 백엔드와 교환할 데이터에 대한 정보를 인터페이스에 즉각 메모하세요.
 // 이것 또한 협업과정에서 타입스크립트가 가져다 주는 큰 장점들 중 하나입니다.
 // interface User { // 받는 유저 정보의 스키마
-
 // }
 
 // interface UserDTO { // 보내는 유저 정보의 스키마
-
 // }
 
 const Login = (): JSX.Element => {
