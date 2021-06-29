@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { store } from "./App.tsx";
 import Pagination from "./Pagination";
 import ProfilePage from "./ProfilePage";
 import shine from "./res/image/shine.png";
+import axios from "axios";
 
 const profileList = [
   {
@@ -65,6 +66,15 @@ const profileList = [
 
 const ProfileList = () => {
   store.dispatch({ type: { loc: "profile" } });
+
+  const [post, setPost] = useState([]);
+  const fakeApi = "http://jsonplaceholder.typicode.com/posts";
+
+  useEffect(async () => {
+    const response = await axios.get(fakeApi);
+    setPost(response.data);
+    console.log(response.data);
+  }, []);
 
   // pagination 관련
   const maxProfileList = 6; // 한 페이지에서 보여줄 최대 profile 개수

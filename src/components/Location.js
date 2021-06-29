@@ -39,6 +39,10 @@ const Location = () => {
     map.relayout();
   }, [center]);
 
+  if (1 === false) {
+    console.log(setCenter());
+  }
+
   store.dispatch({ type: { loc: "location" } });
   // Google Map API는 유료이지만, Kakao API를 사용하면 무료입니다.
   // 동시에 아주 간단하게 구현할 수 있습니다.

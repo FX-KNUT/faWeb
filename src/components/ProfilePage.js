@@ -5,7 +5,7 @@ const ProfilePage = ({ currProfileList, loading }) => {
   return (
     <div className="main-profile-content">
       {currProfileList.map((profile) => (
-        <Profile profile={profile} />
+        <Profile profile={profile} key={profile.idx} />
       ))}
     </div>
   );
