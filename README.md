@@ -6,6 +6,10 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210701
+
+- 해야할 일: 로그인 서비스 구현, Community
+
 # 20210628
 
 - Location Component를 자세히 구현하는 작업

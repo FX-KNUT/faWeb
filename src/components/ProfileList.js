@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { store } from "./App.tsx";
 import Pagination from "./Pagination";
 import ProfilePage from "./ProfilePage";
 import shine from "./res/image/shine.png";
-import axios from "axios";
 
 const profileList = [
   {
@@ -67,19 +66,10 @@ const profileList = [
 const ProfileList = () => {
   store.dispatch({ type: { loc: "profile" } });
 
-  const [post, setPost] = useState([]);
-  const fakeApi = "http://jsonplaceholder.typicode.com/posts";
-
-  useEffect(async () => {
-    const response = await axios.get(fakeApi);
-    setPost(response.data);
-    console.log(response.data);
-  }, []);
-
   // pagination 관련
   const maxProfileList = 6; // 한 페이지에서 보여줄 최대 profile 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
-  const [loading, setLoading] = useState(false); // 서버에서 ProfileList를 가져올 때 loading을 하고 있냐 아니냐
+  // const [loading, setLoading] = useState(false); // 서버에서 ProfileList를 가져올 때 loading을 하고 있냐 아니냐
   const indexOfLast = currentPage * maxProfileList; // 현재 페이지에서 있을 수 있는 마지막 index
   const indexOfFirst = indexOfLast - maxProfileList; // 현재 페이지에서 있을 수 있는 처음 index
   const currProfileList = (tmp) => {
@@ -96,10 +86,7 @@ const ProfileList = () => {
       {/* {loading && <div>loading...</div>} */}
       {/** 나중에 profileList를 받아올 때 대비 */}
       <div>
-        <ProfilePage
-          currProfileList={currProfileList(profileList)}
-          loading={loading}
-        />
+        <ProfilePage currProfileList={currProfileList(profileList)} />
       </div>
       <Pagination
         maxProfileList={maxProfileList}

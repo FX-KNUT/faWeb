@@ -592,13 +592,6 @@ pre {
   align-items: center;
 }
 
-.main-community-content-span:hover,
-.main-community-posts-no:hover,
-.main-community-posts-title:hover,
-.main-community-posts-author:hover {
-  opacity: 0.4;
-}
-
 .main-community-posts {
   padding: 2vh 2vw;
   height: 100%;
@@ -617,15 +610,7 @@ pre {
   position: relative;
   margin: auto;
   overflow: hidden;
-}
-
-.main-community-posts-no,
-.main-community-posts-title,
-.main-community-posts-author {
-  box-shadow: 6px 2px 2px #e9c230;
-  /* border-style: solid;
-  border-color: transparent;
-  border-radius: 0px 0px 6px 0px; */
+  font-size: 1.25rem;
 }
 
 .main-community-posts-no-example:hover,
@@ -643,6 +628,7 @@ pre {
 .main-community-posts div:hover,
 .main-community-functions button:hover {
   color: #43a6df;
+  cursor: pointer;
 }
 
 .main-community-functions {
@@ -655,6 +641,7 @@ pre {
   border-style: none;
   background-color: inherit;
   color: black;
+  font-size: 1.1rem;
 }
 
 .main-community-pagination {

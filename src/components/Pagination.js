@@ -7,16 +7,14 @@ const Pagination = ({ maxProfileList, totalProfile, setCurrentPage }) => {
   return (
     <div className="main-profile-pagination">
       <button className="main-profile-pagination-start">처음으로</button>
-      <ul className="main-profile-pagination-ul">
+      <ul
+        className="main-profile-pagination-ul"
+        onClick={(e) => setCurrentPage(e.target.closest("li > span").innerText)}
+      >
         {pageNumbers.map((number) => {
           return (
             <li key={number}>
-              <span
-                onClick={() => setCurrentPage(number)}
-                className="pageNumber"
-              >
-                {number}
-              </span>
+              <span className="pageNumber">{number}</span>
             </li>
           );
         })}
