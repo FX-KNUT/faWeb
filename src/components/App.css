@@ -580,16 +580,9 @@ pre {
 
 .main-community-content {
   color: white;
-  display: grid;
   height: 80%;
   background: #e9c295;
   padding: 3vh 2vw;
-  grid-template-rows: 6% 90% 4%;
-}
-
-.main-community-content-span {
-  display: flex;
-  align-items: center;
 }
 
 .main-community-posts {
@@ -599,6 +592,10 @@ pre {
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 10% repeat(15, 6%);
   text-align: center;
+}
+.main-community-posts-title-example {
+  display: flex;
+  justify-content: center;
 }
 
 .main-community-posts-no,
@@ -665,9 +662,6 @@ pre {
   opacity: 0.2;
 }
 
-.main-community-pagination-start {
-}
-
 .main-community-pagination-ul {
   padding: 0;
   list-style: none;
@@ -679,9 +673,6 @@ pre {
 
 .main-community-pagination li:hover {
   opacity: 0.2;
-}
-
-.main-community-pagination-end {
 }
 
 .home {

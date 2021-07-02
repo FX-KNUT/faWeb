@@ -5,16 +5,14 @@ const Commu_Pagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   }
   return (
     <div className="main-community-pagination">
-      <ul className="main-community-pagination-ul">
+      <ul
+        className="main-community-pagination-ul"
+        onClick={(e) => setCurrentPage(e.target.closest("li > span").innerText)}
+      >
         {pageNumbers.map((number) => {
           return (
             <li key={number}>
-              <span
-                onClick={() => setCurrentPage(number)}
-                className="pageNumber"
-              >
-                {number}
-              </span>
+              <span className="pageNumber">{number}</span>
             </li>
           );
         })}
