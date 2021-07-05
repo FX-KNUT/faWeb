@@ -10,6 +10,8 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
 - Community_write
 - Community에 checkbox 추가(삭제, 수정할 때)
+  ![image](https://user-images.githubusercontent.com/57670160/124460640-92259180-ddca-11eb-8f11-ff8da52378f7.png)
+- Event Delegation방식을 사용할 때 상위 태그는 안눌러지게끔 설정. -> if문에 tagName을 설정해서 성공!!
 
 # 20210703
 

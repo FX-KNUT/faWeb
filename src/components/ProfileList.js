@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { store } from "./App.tsx";
-import Pagination from "./Pagination";
+import ProfilePagination from "./ProfilePagination";
 import ProfilePage from "./ProfilePage";
 import shine from "./res/image/shine.png";
 
@@ -88,7 +88,7 @@ const ProfileList = () => {
       <div>
         <ProfilePage currProfileList={currProfileList(profileList)} />
       </div>
-      <Pagination
+      <ProfilePagination
         maxProfileList={maxProfileList}
         totalProfile={profileList.length}
         setCurrentPage={setCurrentPage}

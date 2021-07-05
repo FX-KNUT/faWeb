@@ -1,4 +1,8 @@
-const Pagination = ({ maxProfileList, totalProfile, setCurrentPage }) => {
+const ProfilePagination = ({
+  maxProfileList,
+  totalProfile,
+  setCurrentPage,
+}) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalProfile / maxProfileList); i++) {
     pageNumbers.push(i);
@@ -6,10 +10,14 @@ const Pagination = ({ maxProfileList, totalProfile, setCurrentPage }) => {
 
   return (
     <div className="main-profile-pagination">
-      <button className="main-profile-pagination-start">처음으로</button>
       <ul
         className="main-profile-pagination-ul"
-        onClick={(e) => setCurrentPage(e.target.closest("li > span").innerText)}
+        onClick={(e) => {
+          let target = e.target;
+          if (target.tagName === "SPAN") {
+            setCurrentPage(target.innerText);
+          }
+        }}
       >
         {pageNumbers.map((number) => {
           return (
@@ -19,9 +27,8 @@ const Pagination = ({ maxProfileList, totalProfile, setCurrentPage }) => {
           );
         })}
       </ul>
-      <button className="main-profile-pagination-end">끝으로</button>
     </div>
   );
 };
 
-export default Pagination;
+export default ProfilePagination;

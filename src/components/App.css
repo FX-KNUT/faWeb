@@ -447,35 +447,43 @@ pre {
   display: grid;
   justify-content: center;
   height: 80%;
-  background: #9dd9fc;
+  background: #ebedee;
   padding: 3vh 3vw;
-  grid-template-columns: 20vw 20vw 20vw;
-  grid-template-rows: 30vh 30vh;
+  grid-template-columns: repeat(3, 20vw);
+  grid-template-rows: repeat(2, 30vh);
   column-gap: 3vw;
-  row-gap: 4vh;
+  row-gap: 3vh;
 }
 
-.main-profile-content-table {
+.profile_box {
   height: 100%;
-  box-shadow: -2px -2px 4px 0.5px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  position: relative;
 }
 
-.main-profile-content-table tr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.profile_color {
+  height: 6vh;
 }
 
-.main-profile-content-thead {
-  height: 20%;
+.profile_name {
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 5em;
+  padding-right: 0.5em;
 }
 
-.main-profile-content-thead td {
-  margin: 0 1vw;
+.profile_img {
+  border-radius: 50%;
+  width: 4vw;
+  height: 9vh;
+  position: absolute;
+  top: 8px;
+  left: 18px;
 }
 
-.main-profile-content-tfoot td {
-  margin: 0 1vw;
+.profile_date {
+  padding-left: 2vw;
 }
 
 .main-profile-pagination {
@@ -483,21 +491,10 @@ pre {
   justify-content: center;
   align-items: center;
   padding: 0 2vw;
-  height: 10%;
-  background: rgb(233, 141, 111);
-}
-
-.main-profile-pagination button {
-  height: 4vh;
-  margin: 8vw;
-  background: rgb(233, 141, 111);
-  text-align: center;
-  border-style: none;
-  cursor: pointer;
-}
-
-.main-profile-pagination button:hover {
-  opacity: 0.2;
+  margin: auto;
+  width: 83%;
+  height: 8%;
+  background: orange;
 }
 
 .main-profile-pagination-ul {
@@ -506,12 +503,10 @@ pre {
 }
 
 .main-profile-pagination li {
-  padding: 2vw;
-}
-
-.main-profile-pagination-ul > li > span {
-  font-size: 1.5rem;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vw;
 }
 
 .main-profile-pagination-ul > li > span {
@@ -684,7 +679,7 @@ pre {
 }
 
 .profile {
-  background: rgb(114, 113, 113);
+  background: #ebedee;
 }
 
 .location {
