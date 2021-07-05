@@ -9,7 +9,7 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 # 20210706
 
 - Community Pagination, style compelet
-- 해야할 것: 등록, 수정, 삭제에 대한 작업
+- 해야할 것: Home, Introduction Component에 대한 작업, Community 등록, 수정, 삭제에 대한 작업, Community 제목을 누르면 content modal이 나오게 하는 작업, 로그인
   ![image](https://user-images.githubusercontent.com/57670160/124514198-6ed50380-de17-11eb-8150-24001bce676f.png)
 
 # 20210705
