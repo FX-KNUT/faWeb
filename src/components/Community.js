@@ -126,18 +126,6 @@ const Community = () => {
         setCurrentPage={setCurrentPage}
       />
     </div>
-
-    //   <div className="main-community-pagination">
-    //     <button className="main-community-pagination-start">처음으로</button>
-    //     <ul className="main-community-pagination-ul">
-    //       <li>1</li>
-    //       <li>2</li>
-    //       <li>3</li>
-    //       <li>4</li>
-    //     </ul>
-    //     <button className="main-community-pagination-end">끝으로</button>
-    //   </div>
-    // </div>
   );
 };
 
