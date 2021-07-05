@@ -7,7 +7,12 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
     <div className="main-community-pagination">
       <ul
         className="main-community-pagination-ul"
-        onClick={(e) => setCurrentPage(e.target.closest("li > span").innerText)}
+        onClick={(e) => {
+          let target = e.target;
+          if (target.tagName === "SPAN") {
+            setCurrentPage(target.innerText);
+          }
+        }}
       >
         {pageNumbers.map((number) => {
           return (
@@ -17,6 +22,11 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
           );
         })}
       </ul>
+      <div className="main-community-functions">
+        <button>등록</button>
+        <button>수정</button>
+        <button>삭제</button>
+      </div>
     </div>
   );
 };

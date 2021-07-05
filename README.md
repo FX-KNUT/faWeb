@@ -6,6 +6,12 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210706
+
+- Community Pagination, style compelet
+- 해야할 것: 등록, 수정, 삭제에 대한 작업
+  ![image](https://user-images.githubusercontent.com/57670160/124514198-6ed50380-de17-11eb-8150-24001bce676f.png)
+
 # 20210705
 
 - Community_write

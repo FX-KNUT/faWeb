@@ -536,8 +536,8 @@ pre {
   position: relative;
   color: white;
   height: 90%;
-  background: #ec9bc3;
-  padding: 3vh 2vw;
+  background: #00b0ff;
+  padding: 2vh 2vw;
   display: grid;
   grid-template-rows: 60% 40%;
   overflow: hidden;
@@ -546,7 +546,7 @@ pre {
 .main-location-map {
   display: relative;
   overflow: hidden;
-  height: 72vh;
+  height: 75vh;
 }
 
 .main-location-map-kakaoAPImap {
@@ -574,23 +574,57 @@ pre {
 }
 
 .main-community-content {
-  color: white;
   height: 80%;
   background: #e9c295;
   padding: 3vh 2vw;
 }
 
-.main-community-posts {
-  padding: 2vh 2vw;
-  height: 100%;
+.main-community-posts-head {
+  padding: 1vh 2vw;
+  height: 10%;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 10% repeat(15, 6%);
+  grid-template-columns: 7% 73% 10% 10%;
   text-align: center;
+  border-bottom: 1px solid grey;
 }
+
+.main-community-posts-body {
+  height: 90%;
+}
+
+.post {
+  display: flex;
+  margin: 1.5vh 1vw;
+}
+
+.main-community-posts-no-example {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-community-posts-title-example {
   display: flex;
   justify-content: center;
+  flex: 7;
+  cursor: pointer;
+}
+
+.main-community-posts-title-example:hover {
+  text-decoration: underline;
+}
+
+.main-community-posts-author-example {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-community-posts-date-example {
+  flex: 1;
+  margin-left: 1vw;
 }
 
 .main-community-posts-no,
@@ -605,35 +639,10 @@ pre {
   font-size: 1.25rem;
 }
 
-.main-community-posts-no-example:hover,
-.main-community-posts-title-example:hover,
-.main-community-posts-author-example:hover {
-  color: darkgoldenrod;
-}
-
 .main-community-posts-title-example {
   margin: auto 0;
   text-align: left;
   padding: 0 1.5rem;
-}
-
-.main-community-posts div:hover,
-.main-community-functions button:hover {
-  color: #43a6df;
-  cursor: pointer;
-}
-
-.main-community-functions {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 2rem 0 0;
-}
-
-.main-community-functions button {
-  border-style: none;
-  background-color: inherit;
-  color: black;
-  font-size: 1.1rem;
 }
 
 .main-community-pagination {
@@ -642,19 +651,26 @@ pre {
   align-items: center;
   padding: 0 2vw;
   height: 10%;
-  background: rgb(241, 168, 208);
+  background: #ff8f00;
+  position: relative;
 }
 
-.main-community-pagination button {
-  height: 4vh;
-  margin: 8vw;
+.main-community-functions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.main-community-functions > button {
   background: inherit;
   text-align: center;
   border-style: none;
+  font-size: 1rem;
 }
 
-.main-community-pagination button:hover {
-  opacity: 0.2;
+.main-community-functions > button:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .main-community-pagination-ul {
@@ -666,8 +682,13 @@ pre {
   padding: 2vw;
 }
 
-.main-community-pagination li:hover {
-  opacity: 0.2;
+.pageNumber {
+  font-size: 1.5rem;
+}
+
+.pageNumber:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .home {
@@ -683,11 +704,11 @@ pre {
 }
 
 .location {
-  background: rgb(143, 214, 224);
+  background: #ebedee;
 }
 
 .community {
-  background: rgb(245, 244, 175);
+  background: #ebedee;
 }
 
 @media (max-width: 960px),
