@@ -1,4 +1,4 @@
-const Commu_Pagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
+const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPosts / maxPostList); i++) {
     pageNumbers.push(i);
@@ -21,4 +21,4 @@ const Commu_Pagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   );
 };
 
-export default Commu_Pagination;
+export default CommunityPagination;

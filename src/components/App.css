@@ -216,7 +216,7 @@ ul::after {
   cursor: pointer;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   #header-right {
     top: 6rem;
   }

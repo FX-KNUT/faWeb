@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Community_Write = ({idx}) => {
+const CommunityWrite = ({idx}) => {
 
     const [title, setTitle] =useState('');
     const [content, setContent] = useState('');
@@ -14,4 +14,4 @@ const Community_Write = ({idx}) => {
     )
 }
 
-export default Community_Write;
+export default CommunityWrite;
