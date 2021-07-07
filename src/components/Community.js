@@ -89,7 +89,7 @@ const Community = () => {
 
   // const [posts, setPosts] = useState([]);
   // pagination 관련
-  const maxPostList = 12; // 한 페이지에서 보여줄 최대 profile 개수
+  const maxPostList = 11; // 한 페이지에서 보여줄 최대 profile 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
   // const [loading, setLoading] = useState(false); // 서버에서 PostList를 가져올 때 loading을 하고 있냐 아니냐
   const indexOfLast = currentPage * maxPostList; // 현재 페이지에서 있을 수 있는 마지막 index
@@ -119,7 +119,6 @@ const Community = () => {
         </div>
         <CommunityPostlist currPostList={currPostList(postList)} />
       </div>
-
       <CommunityPagination
         maxPostList={maxPostList}
         totalPosts={postList.length}

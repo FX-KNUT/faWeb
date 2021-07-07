@@ -3,6 +3,16 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   for (let i = 1; i <= Math.ceil(totalPosts / maxPostList); i++) {
     pageNumbers.push(i);
   }
+
+  const modal = document.querySelector("#modal");
+  const saveModal = document.querySelector(".saveModal");
+
+  const onSaveBtnClick = () => {
+    console.log(modal);
+    modal?.classList.toggle("show");
+    saveModal?.classList.toggle("show");
+  };
+
   return (
     <div className="main-community-pagination">
       <ul
@@ -23,7 +33,7 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
         })}
       </ul>
       <div className="main-community-functions">
-        <button>등록</button>
+        <button onClick={onSaveBtnClick}>등록</button>
         <button>수정</button>
         <button>삭제</button>
       </div>

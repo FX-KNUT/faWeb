@@ -39,10 +39,6 @@
   animation: popup-modal 1s;
 }
 
-.show {
-  display: block;
-}
-
 @keyframes popup-modal {
   from {
     opacity: 0;
@@ -129,10 +125,6 @@ header {
   }
 }
 
-header nav {
-  /* background: rgba(0, 0, 0, 0.1); */
-}
-
 header ul {
   position: relative;
   margin: 0;
@@ -146,6 +138,8 @@ header ul > li {
 
 .categoryBox {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 1.5vh 6vw;
   font-size: 1.3rem;
@@ -193,7 +187,7 @@ ul::after {
 
 #header-right {
   position: fixed;
-  top: 1.5vh;
+  top: 2vh;
   right: 2rem;
   display: flex;
   justify-content: flex-end;
@@ -204,6 +198,7 @@ ul::after {
   height: 100%;
   margin: unset;
   padding: 0 1.2rem;
+  font-size: 2rem;
 }
 
 #header-right-login:hover {
@@ -568,15 +563,16 @@ pre {
   position: relative;
   top: 4vh;
   width: 100%;
-  height: calc(100% - 4vh);
+  height: calc(100% - 12vh);
   padding: 0 10vw;
   float: left;
 }
 
 .main-community-content {
-  height: 80%;
+  height: 90%;
   background: #e9c295;
   padding: 3vh 2vw;
+  font-size: 1rem;
 }
 
 .main-community-posts-head {
@@ -691,6 +687,44 @@ pre {
   color: white;
 }
 
+.saveModal {
+  display: none;
+  position: absolute;
+  width: 20vw;
+  height: 45vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: white;
+  overflow: hidden;
+  animation: popup-modal 1s;
+}
+
+.community_save {
+  padding: 2vw 2vw;
+}
+
+.exitBtn {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 2vh;
+  right: 1vw;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#saveBtn {
+  position: absolute;
+  bottom: 1.2vh;
+  right: 2vw;
+}
+
+.form-group > textarea {
+  margin-top: 1vh;
+  resize: none;
+}
+
 .home {
   background: #ffcdd2;
 }
@@ -737,4 +771,8 @@ pre {
   .main-introduction-content {
     top: 4.5vh;
   }
+}
+
+.show {
+  display: block;
 }

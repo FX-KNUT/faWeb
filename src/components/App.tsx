@@ -1,15 +1,15 @@
-import './App.css';
-import { createStore } from 'redux';
-import Header from './Header.js';
-import reducer from './Reducer';
+import "./App.css";
+import { createStore } from "redux";
+import Header from "./Header.js";
+import reducer from "./Reducer";
 import Router from "./Router.js";
 import Login from "./Login";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import CommunitySave from "./CommunitySave";
 
 export const store = createStore(reducer);
 
 function App(): JSX.Element {
-
   const [init, setInit] = useState(true);
 
   const locChanged = () => {
@@ -19,7 +19,7 @@ function App(): JSX.Element {
   };
 
   const changeHandler = {
-    locChangeHandler: locChanged
+    locChangeHandler: locChanged,
   };
 
   store.subscribe(changeHandler.locChangeHandler);
@@ -34,13 +34,17 @@ function App(): JSX.Element {
       <header>
         <Header />
       </header>
-      <main className="main">
-        {init ? "Loading..." : <Router />}
-      </main>   
-      <div id="modal" className="modal"> 
+      <main className="main">{init ? "Loading..." : <Router />}</main>
+
+      <div id="modal" className="modal">
+        {/* Header의 Login을 눌렀을 경우 나타나는 모달 */}
         <div id="login" className="login">
-          <Login />        
-        </div>       
+          <Login />
+        </div>
+        {/* 커뮤니티 컴포넌트의 등록을 눌렀을 경우 나타나는 모달 */}
+        <div className="saveModal">
+          <CommunitySave />
+        </div>
       </div>
     </div>
   );
