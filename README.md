@@ -6,6 +6,11 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210707
+
+- Community Pagination의 등록 버튼을 누르면 등록하는 모달이 나옴.
+- Header의 로그인 icon을 로그인과 로그아웃을 다른 icon으로 변환
+
 # 20210706
 
 - Community Pagination, style compelet
