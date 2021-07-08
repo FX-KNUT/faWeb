@@ -15,11 +15,12 @@ const CommunitySave = () => {
   };
 
   // const onSubmit = () => {
-
+  // community에 등록하는 코드
   // }
 
   const onSubmit = (e) => {
     e.preventDefault();
+    onExit();
   };
 
   return (
@@ -54,7 +55,7 @@ const CommunitySave = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             class="form-control"
-            rows="3"
+            rows="8"
             placeholder="내용을 입력해 주세요."
           ></textarea>
         </div>

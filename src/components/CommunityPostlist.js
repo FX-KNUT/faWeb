@@ -1,6 +1,8 @@
 const CommunityPostlist = ({ currPostList }) => {
+  const titleClick = () => {};
+
   return (
-    <div className="main-community-posts-body">
+    <div className="main-community-posts-body" onClick={titleClick}>
       {currPostList.map((post) => {
         return (
           <div className="post" key={post.idx}>
