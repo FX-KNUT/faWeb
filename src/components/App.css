@@ -59,6 +59,7 @@
 }
 
 #login-wrapper > form {
+  width: 100%;
   height: 100%;
 }
 
@@ -105,11 +106,6 @@ header {
   background-color: white;
 }
 
-.header-ul {
-  position: relative;
-  display: flex;
-}
-
 @media (max-width: 860px) {
   .categoryBox {
     width: 100vw;
@@ -118,22 +114,6 @@ header {
     flex-direction: column;
     align-items: center;
   }
-
-  .header-ul:hover {
-    max-height: 360px;
-    transition: max-height 0.5s ease-in;
-  }
-}
-
-header ul {
-  position: relative;
-  margin: 0;
-  padding: 1.5vh 6vw;
-  list-style: none;
-}
-
-header ul > li {
-  padding: 0 5vw;
 }
 
 .categoryBox {
@@ -186,12 +166,13 @@ ul::after {
 }
 
 #header-right {
-  position: fixed;
-  top: 2vh;
+  position: absolute;
+  top: 0.5vh;
   right: 2rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 100;
 }
 
 #header-right-login {
@@ -651,20 +632,15 @@ pre {
   position: relative;
 }
 
-.main-community-functions {
+.saveBtn {
   position: absolute;
-  top: 6px;
-  right: 6px;
-}
-
-.main-community-functions > button {
+  top: 0.8vh;
+  right: 1vw;
   background: inherit;
-  text-align: center;
   border-style: none;
-  font-size: 1rem;
 }
 
-.main-community-functions > button:hover {
+.saveBtn:hover {
   cursor: pointer;
   color: white;
 }
@@ -723,6 +699,24 @@ pre {
 .form-group > textarea {
   margin-top: 1vh;
   resize: none;
+}
+
+.contentModal {
+  display: none;
+  position: absolute;
+  width: 20vw;
+  height: 45vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: white;
+  overflow: hidden;
+  animation: popup-modal 1s;
+}
+
+.community_post {
+  padding: 2vw 2vw;
 }
 
 .home {

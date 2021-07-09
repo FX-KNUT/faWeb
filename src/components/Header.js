@@ -1,7 +1,3 @@
-// import icon from './res/image/temp_icon.png';
-// import { MdAccountCircle } from "react-icons/md";
-import { useState } from "react";
-import { RiLoginBoxFill, RiLogoutBoxRFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
 const category = [
@@ -28,22 +24,6 @@ const category = [
 ];
 
 const Header = () => {
-  const [curLogin, setCurLogin] = useState(true);
-  const login_logout_icon = curLogin ? (
-    <RiLoginBoxFill />
-  ) : (
-    <RiLogoutBoxRFill />
-  );
-  const modal = document.querySelector("#modal");
-  const login = document.querySelector("#login");
-
-  const onLoginClicked = (e) => {
-    console.log(modal);
-    console.log(login);
-    modal?.classList.toggle("show");
-    login?.classList.toggle("show");
-  };
-
   return (
     <nav className="categoryBox">
       {category.map((c) => (
@@ -56,12 +36,6 @@ const Header = () => {
           {c.text}
         </NavLink>
       ))}
-      <span id="header-right">
-        <p id="header-right-login" onClick={onLoginClicked}>
-          {login_logout_icon}
-        </p>
-        {/* <MdAccountCircle className="account" /> */}
-      </span>
     </nav>
   );
 };

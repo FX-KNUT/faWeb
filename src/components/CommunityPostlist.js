@@ -1,23 +1,22 @@
+import Post from "./Post";
+
 const CommunityPostlist = ({ currPostList }) => {
-  const titleClick = () => {};
+  const modal = document.querySelector("#modal");
+  const contentModal = document.querySelector(".contentModal");
+
+  const titleClick = (e) => {
+    let target = e.target;
+    if (target.className === "main-community-posts-title-example") {
+      console.log(target.parentNode);
+      modal?.classList.toggle("show");
+      contentModal?.classList.toggle("show");
+    }
+  };
 
   return (
     <div className="main-community-posts-body" onClick={titleClick}>
       {currPostList.map((post) => {
-        return (
-          <div className="post" key={post.idx}>
-            <span className="main-community-posts-no-example">{post.idx}</span>
-            <span className="main-community-posts-title-example">
-              {post.title}
-            </span>
-            <span className="main-community-posts-author-example">
-              {post.author}
-            </span>
-            <span className="main-community-posts-date-example">
-              {post.date}
-            </span>
-          </div>
-        );
+        return <Post post={post} key={post.idx} />;
       })}
     </div>
   );

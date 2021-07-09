@@ -1,7 +1,7 @@
-import { store } from './App.tsx';
+import { store } from "./App.tsx";
 
 const Home = () => {
-  store.dispatch({ type: { loc: 'home' } });
+  store.dispatch({ type: { loc: "home" } });
 
   return (
     <div className="main-home-wrapper">

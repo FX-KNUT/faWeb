@@ -6,6 +6,10 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210708
+
+- 오늘 할 일: title을 누르면 내용 모달이 나옴,
+
 # 20210707
 
 - Community Pagination의 등록 버튼을 누르면 등록하는 모달이 나옴.

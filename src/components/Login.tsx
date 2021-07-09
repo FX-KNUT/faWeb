@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { store } from "./App";
 // import { SERVERURL, SERVERPORT } from './Constants';
 // import axios from 'axios';
 
@@ -11,6 +12,21 @@ import { useState } from "react";
 // interface UserDTO { // 보내는 유저 정보의 스키마
 
 // }
+
+const allUsers = [
+  {
+    userId: "min",
+    userPw: "1234",
+  },
+  {
+    userId: "kim",
+    userPw: "1234",
+  },
+  {
+    userId: "park",
+    userPw: "1234",
+  },
+];
 
 const Login = (): JSX.Element => {
   // destructuring에 따른 Typing 방법
@@ -71,6 +87,8 @@ const Login = (): JSX.Element => {
 
   const onXClicked = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
+    setId("");
+    setPw("");
     modal?.classList.toggle("show");
     login?.classList.toggle("show");
   };
@@ -103,13 +121,31 @@ const Login = (): JSX.Element => {
   //     console.log(res);
   // }
 
-  const onSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  // 원래 submit을 하면 id와 pw이 서버로 전송됨. 서버에서 일치하는지 판단 후 res를 줌.
+  const onSubmit = () => {
+    // axios 역할을 하는 코드
+
+    if (
+      allUsers.filter((user) => {
+        return user.userId === id && user.userPw === pw;
+      })
+    ) {
+      // redux의 state의 loggedIn을 true로 바꿔야 됨.
+      store.dispatch({ type: { loc: "", loggedIn: "true" } });
+      console.log(store.getState().loc);
+      console.log(store.getState().loggedIn);
+    } else {
+      console.log("failed");
+    }
+
+    // 모달을 닫는 코드.
+    modal?.classList.toggle("show");
+    login?.classList.toggle("show");
   };
 
   return (
     <div id="login-wrapper">
-      <form action="" method="post" onSubmit={onSubmit}>
+      {/* <form action="" method="post" onSubmit={onSubmit}>
         <p id="login-header" className="login-p">
           로그인
         </p>
@@ -146,7 +182,50 @@ const Login = (): JSX.Element => {
             Sign In
           </button>
         </div>
-      </form>
+      </form> */}
+      <div>
+        <p id="login-header" className="login-p">
+          로그인
+        </p>
+        <button onClick={onXClicked} style={xBtnStyle} id="login-X_Btn">
+          X
+        </button>
+        <p id="login-id" className="login-p">
+          ID
+        </p>
+        <input
+          type="text"
+          value={id}
+          className="login-input"
+          onChange={onIDChange}
+        />
+        <p id="login-pw" className="login-p">
+          Password
+        </p>
+        <input
+          type="password"
+          className="login-input"
+          value={pw}
+          onChange={onPasswordChange}
+        />
+        <div id="login-bottomBtnDiv">
+          <button
+            id="login-resetBtn"
+            style={resetBtnStyle}
+            onClick={onResetClicked}
+          >
+            Reset
+          </button>
+          <button
+            onClick={onSubmit}
+            id="login-submitBtn"
+            style={submitBtnStyle}
+            type="submit"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

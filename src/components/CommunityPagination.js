@@ -8,7 +8,6 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   const saveModal = document.querySelector(".saveModal");
 
   const onSaveBtnClick = () => {
-    console.log(modal);
     modal?.classList.toggle("show");
     saveModal?.classList.toggle("show");
   };
@@ -33,9 +32,9 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
         })}
       </ul>
       <div className="main-community-functions">
-        <button onClick={onSaveBtnClick}>등록</button>
-        <button>수정</button>
-        <button>삭제</button>
+        <button onClick={onSaveBtnClick} className="saveBtn">
+          등록
+        </button>
       </div>
     </div>
   );
