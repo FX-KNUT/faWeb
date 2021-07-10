@@ -6,6 +6,10 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210710
+
+- 커뮤니티의 모달들을 없애고 Link 태그 이용하기로 함.
+
 # 20210708
 
 - 오늘 할 일: title을 누르면 내용 모달이 나옴,
