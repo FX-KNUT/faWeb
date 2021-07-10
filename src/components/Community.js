@@ -5,70 +5,14 @@ import CommunityPostlist from "./CommunityPostlist";
 
 const postList = [
   {
-    idx: 1,
-    title: "1234567",
-    content: "123",
-    author: "김김김",
-    date: "2021-07-06",
-  },
-  {
-    idx: 2,
-    title: "22222222",
-    content: "123",
-    author: "박박박",
-    date: "2021-07-06",
-  },
-  {
-    idx: 3,
+    idx: 13,
     title: "33333332",
     content: "123",
-    author: "SKSKSK",
+    author: "ygjvhb",
     date: "2021-07-06",
   },
   {
-    idx: 4,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 5,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 6,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 7,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 8,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 9,
-    title: "33333332",
-    content: "123",
-    author: "SKSKSK",
-    date: "2021-07-06",
-  },
-  {
-    idx: 10,
+    idx: 12,
     title: "33333332",
     content: "123",
     author: "SKSKSK",
@@ -82,17 +26,73 @@ const postList = [
     date: "2021-07-06",
   },
   {
-    idx: 12,
+    idx: 10,
     title: "33333332",
     content: "123",
     author: "SKSKSK",
     date: "2021-07-06",
   },
   {
-    idx: 13,
+    idx: 9,
     title: "33333332",
     content: "123",
-    author: "ygjvhb",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 8,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 7,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 6,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 5,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 4,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 3,
+    title: "33333332",
+    content: "123",
+    author: "SKSKSK",
+    date: "2021-07-06",
+  },
+  {
+    idx: 2,
+    title: "22222222",
+    content: "123",
+    author: "박박박",
+    date: "2021-07-06",
+  },
+  {
+    idx: 1,
+    title: "1234567",
+    content: "123",
+    author: "김김김",
     date: "2021-07-06",
   },
 ];
@@ -100,16 +100,18 @@ const postList = [
 const Community = () => {
   store.dispatch({ type: { loc: "community" } });
 
+  // 서버에 profileList를 받음.
   // const [posts, setPosts] = useState([]);
+  // const [loading, setLoading] = useState(false); // 서버에서 PostList를 가져올 때 loading을 하고 있냐 아니냐
+
   // pagination 관련
   const maxPostList = 11; // 한 페이지에서 보여줄 최대 profile 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
-  // const [loading, setLoading] = useState(false); // 서버에서 PostList를 가져올 때 loading을 하고 있냐 아니냐
   const indexOfLast = currentPage * maxPostList; // 현재 페이지에서 있을 수 있는 마지막 index
   const indexOfFirst = indexOfLast - maxPostList; // 현재 페이지에서 있을 수 있는 처음 index
-  const currPostList = (tmp) => {
+  const currPostList = (postList) => {
     // 페이지에 맞는 Post를 보여준다.
-    const currPost = tmp.slice(indexOfFirst, indexOfLast);
+    const currPost = postList.slice(indexOfFirst, indexOfLast);
     return currPost;
   };
 

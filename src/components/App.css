@@ -571,49 +571,33 @@ pre {
 
 .post {
   display: flex;
-  margin: 1.5vh 1vw;
-}
-
-.main-community-posts-no-example {
-  flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.main-community-posts-title-example {
-  display: flex;
-  justify-content: center;
-  flex: 7;
-  cursor: pointer;
-}
-
-.main-community-posts-title-example:hover {
-  text-decoration: underline;
-}
-
-.main-community-posts-author-example {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-community-posts-date-example {
-  flex: 1;
-  margin-left: 1vw;
-}
-
-.main-community-posts-no,
-.main-community-posts-title,
-.main-community-posts-author,
-.main-community-posts-no-example,
-.main-community-posts-title-example,
-.main-community-posts-author-example {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
   font-size: 1.25rem;
+  height: 5.5vh;
+}
+
+.post-idx {
+  padding-left: 3.8vw;
+  flex: 1;
+}
+
+.post-title {
+  flex: 7;
+  display: flex;
+  justify-content: center;
+}
+
+.post-title:hover {
+  text-decoration: black underline;
+}
+
+.post-author {
+  flex: 1;
+}
+
+.post-date {
+  flex: 1;
 }
 
 .main-community-posts-title-example {
@@ -632,20 +616,10 @@ pre {
   position: relative;
 }
 
-.saveBtn {
-  position: absolute;
-  top: 0.8vh;
-  right: 1vw;
-  background: inherit;
-  border-style: none;
-}
-
-.saveBtn:hover {
-  cursor: pointer;
-  color: white;
-}
-
 .main-community-pagination-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   list-style: none;
 }
@@ -663,41 +637,18 @@ pre {
   color: white;
 }
 
-.saveModal {
-  display: none;
+.writeBtn {
   position: absolute;
-  width: 20vw;
-  height: 45vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  background-color: white;
-  overflow: hidden;
-  animation: popup-modal 1s;
+  right: 10px;
 }
 
-.community_save {
-  padding: 2vw 2vw;
+.write {
+  padding-top: 5vh;
+  width: 60vw;
+  margin: auto;
 }
 
-.exitBtn {
-  font-size: 1.2rem;
-  position: absolute;
-  top: 2vh;
-  right: 1vw;
-  z-index: 100;
-  cursor: pointer;
-}
-
-#saveBtn {
-  position: absolute;
-  bottom: 1.2vh;
-  right: 2vw;
-}
-
-.form-group > textarea {
-  margin-top: 1vh;
+#exampleFormControlTextarea1 {
   resize: none;
 }
 

@@ -5,8 +5,6 @@ import reducer from "./Reducer";
 import Router from "./Router.js";
 import Login from "./Login";
 import { useEffect, useState } from "react";
-import CommunitySave from "./CommunitySave";
-import ContentModal from "./ContentModal";
 import { RiLoginBoxFill, RiLogoutBoxRFill } from "react-icons/ri";
 
 export const store = createStore(reducer);
@@ -14,14 +12,15 @@ export const store = createStore(reducer);
 function App(): JSX.Element {
   const [init, setInit] = useState(true);
 
-  const currLogin = store.getState().loggedIn;
-
+  var login_logout_icon = <RiLoginBoxFill />;
+  const loggedRender = () => {
+    const loggedState = store.getState().loggedIn;
+    console.log("asdasd" + loggedState);
+    login_logout_icon = loggedState ? <RiLogoutBoxRFill /> : <RiLoginBoxFill />;
+  };
   // subscribe()가 사용되어야 됨.
-  const login_logout_icon = currLogin ? (
-    <RiLogoutBoxRFill />
-  ) : (
-    <RiLoginBoxFill />
-  );
+  store.subscribe(loggedRender);
+
   const modal = document.querySelector("#modal");
   const login = document.querySelector("#login");
 
@@ -64,21 +63,12 @@ function App(): JSX.Element {
         <div id="login" className="login">
           <Login />
         </div>
-        {/* 커뮤니티 컴포넌트의 등록을 눌렀을 경우 나타나는 모달 */}
-        <div className="saveModal">
-          <CommunitySave />
-        </div>
-        {/* Community의 각 글을 보여주는 modal */}
-        <div className="contentModal">
-          <ContentModal />
-        </div>
       </div>
       {/* 로그인 아이콘을 보여줌. */}
       <span id="header-right">
         <p id="header-right-login" onClick={onLoginClicked}>
           {login_logout_icon}
         </p>
-        {/* <MdAccountCircle className="account" /> */}
       </span>
     </div>
   );

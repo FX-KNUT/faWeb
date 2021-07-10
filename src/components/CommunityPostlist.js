@@ -1,22 +1,24 @@
-import Post from "./Post";
+import { Link } from "react-router-dom";
 
 const CommunityPostlist = ({ currPostList }) => {
-  const modal = document.querySelector("#modal");
-  const contentModal = document.querySelector(".contentModal");
-
   const titleClick = (e) => {
-    let target = e.target;
-    if (target.className === "main-community-posts-title-example") {
-      console.log(target.parentNode);
-      modal?.classList.toggle("show");
-      contentModal?.classList.toggle("show");
-    }
+    if (e.target.className === "main-community-posts-title-example")
+      console.log("asd");
   };
 
   return (
     <div className="main-community-posts-body" onClick={titleClick}>
       {currPostList.map((post) => {
-        return <Post post={post} key={post.idx} />;
+        return (
+          <div className="post" key={post.idx}>
+            <span className="post-idx">{post.idx}</span>
+            <Link to="post" className="post-title">
+              <span>{post.title}</span>
+            </Link>
+            <span className="post-author">{post.author}</span>
+            <span className="post-date">{post.date}</span>
+          </div>
+        );
       })}
     </div>
   );

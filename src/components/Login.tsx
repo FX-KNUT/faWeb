@@ -124,12 +124,10 @@ const Login = (): JSX.Element => {
   // 원래 submit을 하면 id와 pw이 서버로 전송됨. 서버에서 일치하는지 판단 후 res를 줌.
   const onSubmit = () => {
     // axios 역할을 하는 코드
-
-    if (
-      allUsers.filter((user) => {
-        return user.userId === id && user.userPw === pw;
-      })
-    ) {
+    const a = allUsers.filter(
+      (user) => user.userId === id && user.userPw === pw
+    );
+    if (a.length !== 0) {
       // redux의 state의 loggedIn을 true로 바꿔야 됨.
       store.dispatch({ type: { loc: "", loggedIn: "true" } });
       console.log(store.getState().loc);

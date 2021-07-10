@@ -1,16 +1,10 @@
+import { Link } from "react-router-dom";
+
 const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPosts / maxPostList); i++) {
     pageNumbers.push(i);
   }
-
-  const modal = document.querySelector("#modal");
-  const saveModal = document.querySelector(".saveModal");
-
-  const onSaveBtnClick = () => {
-    modal?.classList.toggle("show");
-    saveModal?.classList.toggle("show");
-  };
 
   return (
     <div className="main-community-pagination">
@@ -31,11 +25,11 @@ const CommunityPagination = ({ maxPostList, totalPosts, setCurrentPage }) => {
           );
         })}
       </ul>
-      <div className="main-community-functions">
-        <button onClick={onSaveBtnClick} className="saveBtn">
+      <Link to="/communityWrite" className="writeBtn">
+        <button type="button" className="btn btn-warning">
           등록
         </button>
-      </div>
+      </Link>
     </div>
   );
 };

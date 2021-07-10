@@ -5,6 +5,8 @@ import Introduction from "./Introduction.js";
 import Location from "./Location.js";
 import Community from "./Community.js";
 import NotFound from "./NotFound.js";
+import CommunityWrite from "./CommunityWrite.js";
+import Post from "./Post.js";
 
 const AppRouter = () => {
   return (
@@ -14,6 +16,8 @@ const AppRouter = () => {
       <Route exact path="/profile" component={ProfileList} />
       <Route exact path="/location" component={Location} />
       <Route exact path="/community" component={Community} />
+      <Route exact path="/communityWrite" component={CommunityWrite} />
+      <Route exact path="/post" component={Post} />
       <Route component={NotFound} />
     </Switch>
   );
