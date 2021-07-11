@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import qs from "qs";
 
-const Post = () => {
+const Post = ({ location, match, history }) => {
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true, // 문자열 맨 앞의 ?를 생략
+  });
+  const idx = query.idx;
+
+  // axios.get()로 idx를 전달하고 idx에 맞는 post를 받아온다.
+
   const title = "";
   const content = "";
   const file = "";

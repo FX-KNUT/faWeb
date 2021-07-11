@@ -16,6 +16,11 @@ const CommunityWrite = () => {
     setFile(e.target.value);
   };
 
+  // axios로 title, content, file을 전달한다.
+  // const onSubmit = (e) => {
+  //
+  // };
+
   const onSubmit = (e) => {
     e.preventDefault();
   };
