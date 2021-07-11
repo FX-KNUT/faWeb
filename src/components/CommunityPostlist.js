@@ -7,7 +7,7 @@ const CommunityPostlist = ({ currPostList }) => {
         return (
           <div className="post" key={post.idx}>
             <span className="post-idx">{post.idx}</span>
-            <Link to="post" className="post-title">
+            <Link to="/post" className="post-title">
               <span>{post.title}</span>
             </Link>
             <span className="post-author">{post.author}</span>

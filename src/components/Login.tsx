@@ -143,7 +143,7 @@ const Login = (): JSX.Element => {
 
   return (
     <div id="login-wrapper">
-      {/* <form action="" method="post" onSubmit={onSubmit}>
+      <form action="" method="post" onSubmit={onSubmit}>
         <p id="login-header" className="login-p">
           로그인
         </p>
@@ -180,50 +180,7 @@ const Login = (): JSX.Element => {
             Sign In
           </button>
         </div>
-      </form> */}
-      <div>
-        <p id="login-header" className="login-p">
-          로그인
-        </p>
-        <button onClick={onXClicked} style={xBtnStyle} id="login-X_Btn">
-          X
-        </button>
-        <p id="login-id" className="login-p">
-          ID
-        </p>
-        <input
-          type="text"
-          value={id}
-          className="login-input"
-          onChange={onIDChange}
-        />
-        <p id="login-pw" className="login-p">
-          Password
-        </p>
-        <input
-          type="password"
-          className="login-input"
-          value={pw}
-          onChange={onPasswordChange}
-        />
-        <div id="login-bottomBtnDiv">
-          <button
-            id="login-resetBtn"
-            style={resetBtnStyle}
-            onClick={onResetClicked}
-          >
-            Reset
-          </button>
-          <button
-            onClick={onSubmit}
-            id="login-submitBtn"
-            style={submitBtnStyle}
-            type="submit"
-          >
-            Sign In
-          </button>
-        </div>
-      </div>
+      </form>
     </div>
   );
 };

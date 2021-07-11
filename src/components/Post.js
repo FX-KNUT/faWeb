@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import qs from "qs";
 
-const Post = ({ location, match, history }) => {
+const Post = ({ location }) => {
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true, // 문자열 맨 앞의 ?를 생략
   });
