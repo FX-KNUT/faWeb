@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CommunityWrite = () => {
   const [title, setTitle] = useState("");
@@ -59,9 +60,14 @@ const CommunityWrite = () => {
             multiple
           />
         </div>
-        <button type="submit" class="btn btn-primary">
-          등록
-        </button>
+        <div className="writePageBtn">
+          <button type="submit" className="btn btn-primary">
+            등록
+          </button>
+          <Link to="/community" className="btn btn-primary">
+            돌아가기
+          </Link>
+        </div>
       </form>
     </div>
   );

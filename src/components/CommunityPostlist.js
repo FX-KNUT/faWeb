@@ -1,13 +1,8 @@
 import { Link } from "react-router-dom";
 
 const CommunityPostlist = ({ currPostList }) => {
-  const titleClick = (e) => {
-    if (e.target.className === "main-community-posts-title-example")
-      console.log("asd");
-  };
-
   return (
-    <div className="main-community-posts-body" onClick={titleClick}>
+    <div className="main-community-posts-body">
       {currPostList.map((post) => {
         return (
           <div className="post" key={post.idx}>
