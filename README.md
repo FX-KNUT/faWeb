@@ -6,6 +6,15 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210711
+
+- 커뮤니티 메인 화면
+  ![image](https://user-images.githubusercontent.com/57670160/125194123-e88f4600-e28a-11eb-9fb3-3de5207b6f4d.png)
+- 커뮤니티 등록 화면
+  ![image](https://user-images.githubusercontent.com/57670160/125194133-f80e8f00-e28a-11eb-9440-cca4e3716281.png)
+- 커뮤니티 제목 누르면 들어가지는 화면
+  ![image](https://user-images.githubusercontent.com/57670160/125194143-065cab00-e28b-11eb-9a15-f1378f9a2c09.png)
+
 # 20210710
 
 - 커뮤니티의 모달들을 없애고 Link 태그 이용하기로 함.
