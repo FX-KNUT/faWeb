@@ -587,6 +587,7 @@ pre {
 .post-title {
   flex: 7;
   padding: 0;
+  cursor: pointer;
 }
 
 .post-title:hover {

@@ -97,7 +97,7 @@ const postList = [
   },
 ];
 
-const Community = () => {
+const Community = ({ history }) => {
   store.dispatch({ type: { loc: "community" } });
 
   // 서버에 profileList를 받음.
@@ -132,7 +132,10 @@ const Community = () => {
             <span className="main-community-posts-date">작성일</span>
           </strong>
         </div>
-        <CommunityPostlist currPostList={currPostList(postList)} />
+        <CommunityPostlist
+          currPostList={currPostList(postList)}
+          history={history}
+        />
       </div>
       <CommunityPagination
         maxPostList={maxPostList}

@@ -6,6 +6,7 @@ const Post = ({ location }) => {
     ignoreQueryPrefix: true, // 문자열 맨 앞의 ?를 생략
   });
   const idx = query.idx;
+  console.log(idx);
 
   // axios.get()로 idx를 전달하고 idx에 맞는 post를 받아온다.
 
