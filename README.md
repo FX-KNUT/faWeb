@@ -6,6 +6,13 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210712
+
+- 로그인 화면
+  ![image](https://user-images.githubusercontent.com/57670160/125232576-e0c9b300-e317-11eb-94e6-f19f32020038.png)
+- 회원가입 화면
+  ![image](https://user-images.githubusercontent.com/57670160/125232602-efb06580-e317-11eb-9614-79c116d30c32.png)
+
 # 20210711
 
 - 커뮤니티 메인 화면
