@@ -33,70 +33,20 @@ const Login = (): JSX.Element => {
   let [id, setId]: [id: string, setId: Function] = useState("");
   let [pw, setPw]: [pw: string, setPw: Function] = useState("");
 
-  // Union Type, | 를 사용하여 이 타입 중 하나일 것임을 명시
-  // HTMLElement의 경우 로딩 시점에 따라 null로 인식될 수 있으므로 null까지 포함해야 함
-  const modal: HTMLElement | null = document.querySelector("#modal");
-  const login: HTMLElement | null = document.querySelector("#login");
-
-  // 굳이 Inline Style을 지정한다면 그나마 좀 더 괜찮게 하는 방법입니다.
-  const resetBtnStyle = {
-    // 이런 객체엔 Typing하지 않아도 됩니다.
-    color: "white",
-    background: "blueviolet",
-    width: "5rem",
-    padding: ".125rem .5rem",
-    border: "1px solid white",
-    borderRadius: ".25rem",
-    fontSize: "1rem",
-    lineHeight: 1.5,
+  const onIDChange = (e: any) => {
+    setId(e.target.value);
   };
-
-  const submitBtnStyle = {
-    // React Native에서 이 방식을 사용합니다.
-    color: "white",
-    background: "purple",
-    width: "5rem",
-    padding: ".125rem .875rem",
-    border: "1px solid purple",
-    borderRadius: ".25rem",
-    fontSize: "1rem",
-    lineHeight: 1.5,
+  const onPwChange = (e: any) => {
+    setPw(e.target.value);
   };
-
-  const xBtnStyle = {
-    color: "white",
-    background: "#1E1F21",
-    padding: ".125rem .5rem",
-    border: "1px solid silver",
-    borderRadius: ".25rem",
-    fontSize: "1rem",
-    lineHeight: 1.5,
+  const onResetClick = () => {
+    setId("");
+    setPw("");
   };
 
   // 객체의 타입을 다 외울 필요 없습니다.
   // 아래의 onIDChange를 예로 들면, onIDChange 이벤트가 걸려있는
   // DOM에 마우스를 올려 해당 객체의 타입이 무엇인지 확인하면 쉽게 알 수 있습니다.
-
-  const onIDChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setId(e.target.value);
-  };
-
-  const onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setPw(e.target.value);
-  };
-
-  const onXClicked = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    setId("");
-    setPw("");
-    modal?.classList.toggle("show");
-    login?.classList.toggle("show");
-  };
-
-  const onResetClicked = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    setId("");
-    setPw("");
-  };
 
   // axios를 이렇게 사용하는 방법도 좋지만,
   // axios를 좀 더 날렵하게 custom하는 방법도 요긴하게 사용될 수 있습니다.
@@ -122,62 +72,45 @@ const Login = (): JSX.Element => {
   // }
 
   // 원래 submit을 하면 id와 pw이 서버로 전송됨. 서버에서 일치하는지 판단 후 res를 줌.
-  const onSubmit = () => {
-    // axios 역할을 하는 코드
-    const a = allUsers.filter(
-      (user) => user.userId === id && user.userPw === pw
-    );
-    if (a.length !== 0) {
-      // redux의 state의 loggedIn을 true로 바꿔야 됨.
-      store.dispatch({ type: { loc: "", loggedIn: "true" } });
-      console.log(store.getState().loc);
-      console.log(store.getState().loggedIn);
-    } else {
-      console.log("failed");
-    }
-
-    // 모달을 닫는 코드.
-    modal?.classList.toggle("show");
-    login?.classList.toggle("show");
+  const onSubmit = (e: any) => {
+    e.preventDefault();
   };
 
   return (
-    <div id="login-wrapper">
+    <div className="login_wrapper">
       <form action="" method="post" onSubmit={onSubmit}>
-        <p id="login-header" className="login-p">
-          로그인
-        </p>
-        <button onClick={onXClicked} style={xBtnStyle} id="login-X_Btn">
-          X
-        </button>
-        <p id="login-id" className="login-p">
-          ID
-        </p>
-        <input
-          type="text"
-          value={id}
-          className="login-input"
-          onChange={onIDChange}
-        />
-        <p id="login-pw" className="login-p">
-          Password
-        </p>
-        <input
-          type="password"
-          className="login-input"
-          value={pw}
-          onChange={onPasswordChange}
-        />
-        <div id="login-bottomBtnDiv">
+        <div className="form-floating mb-3">
+          <input
+            type="email"
+            className="form-control"
+            id="floatingInput"
+            placeholder="ID"
+            value={id}
+            onChange={onIDChange}
+          />
+          <label htmlFor="floatingInput">ID</label>
+        </div>
+        <div className="form-floating mb-3">
+          <input
+            type="password"
+            className="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            value={pw}
+            onChange={onPwChange}
+          />
+          <label htmlFor="floatingPassword">Password</label>
+        </div>
+        <div className="button_wrapper">
           <button
-            id="login-resetBtn"
-            style={resetBtnStyle}
-            onClick={onResetClicked}
+            type="reset"
+            className="btn btn-primary"
+            onClick={onResetClick}
           >
             Reset
           </button>
-          <button id="login-submitBtn" style={submitBtnStyle} type="submit">
-            Sign In
+          <button type="submit" className="btn btn-primary">
+            Sign in
           </button>
         </div>
       </form>

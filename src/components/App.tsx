@@ -3,37 +3,32 @@ import { createStore } from "redux";
 import Header from "./Header.js";
 import reducer from "./Reducer";
 import Router from "./Router.js";
-import Login from "./Login";
 import { useEffect, useState } from "react";
-import { RiLoginBoxFill, RiLogoutBoxRFill } from "react-icons/ri";
+import { RiLoginBoxFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 export const store = createStore(reducer);
 
 function App(): JSX.Element {
   const [init, setInit] = useState(true);
 
-  var login_logout_icon = <RiLoginBoxFill />;
-  const loggedRender = () => {
-    const loggedState = store.getState().loggedIn;
-    console.log("asdasd" + loggedState);
-    login_logout_icon = loggedState ? <RiLogoutBoxRFill /> : <RiLoginBoxFill />;
-  };
-  // subscribe()가 사용되어야 됨.
-  store.subscribe(loggedRender);
+  // var login_logout_icon = <RiLoginBoxFill />;
+  // const loggedRender = () => {
+  //   const loggedState = store.getState().loggedIn;
 
-  const modal = document.querySelector("#modal");
-  const login = document.querySelector("#login");
+  //   login_logout_icon = loggedState ? <RiLogoutBoxRFill /> : <RiLoginBoxFill />;
+  // };
+  // // subscribe()가 사용되어야 됨.
+  // store.subscribe(loggedRender);
 
-  const onLoginClicked = () => {
-    console.log(store.getState().loggedIn);
-    if (store.getState().loggedIn === false) {
-      modal?.classList.toggle("show");
-      login?.classList.toggle("show");
-    } else {
-      store.dispatch({ type: { loc: "", loggedIn: "false" } });
-      console.log(store.getState().loggedIn);
-    }
-  };
+  // const onLoginClicked = () => {
+  //   console.log(store.getState().loggedIn);
+  //   if (store.getState().loggedIn === false) {
+  //   } else {
+  //     store.dispatch({ type: { loc: "", loggedIn: "false" } });
+  //     console.log(store.getState().loggedIn);
+  //   }
+  // };
 
   const locChanged = () => {
     const { loc } = store.getState();
@@ -58,18 +53,10 @@ function App(): JSX.Element {
         <Header />
       </header>
       <main className="main">{init ? "Loading..." : <Router />}</main>
-      <div id="modal" className="modal">
-        {/* Header의 Login을 눌렀을 경우 나타나는 모달 */}
-        <div id="login" className="login">
-          <Login />
-        </div>
-      </div>
       {/* 로그인 아이콘을 보여줌. */}
-      <span id="header-right">
-        <p id="header-right-login" onClick={onLoginClicked}>
-          {login_logout_icon}
-        </p>
-      </span>
+      <Link to="/login">
+        <RiLoginBoxFill className="login_icon" />
+      </Link>
     </div>
   );
 }
