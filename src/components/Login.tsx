@@ -82,7 +82,7 @@ const Login = (): JSX.Element => {
       <form action="" method="post" onSubmit={onSubmit}>
         <div className="form-floating mb-3">
           <input
-            type="email"
+            type="text"
             className="form-control"
             id="floatingInput"
             placeholder="ID"
