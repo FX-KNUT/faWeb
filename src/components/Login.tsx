@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { store } from "./App";
 // import { SERVERURL, SERVERPORT } from './Constants';
 // import axios from 'axios';
@@ -107,11 +108,14 @@ const Login = (): JSX.Element => {
             className="btn btn-primary"
             onClick={onResetClick}
           >
-            Reset
+            리셋
           </button>
           <button type="submit" className="btn btn-primary">
-            Sign in
+            로그인
           </button>
+          <Link to="/signup" className="btn btn-primary">
+            회원가입
+          </Link>
         </div>
       </form>
     </div>

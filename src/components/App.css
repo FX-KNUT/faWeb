@@ -46,6 +46,11 @@ header {
   justify-content: flex-end;
 }
 
+.signup_wrapper {
+  width: 20%;
+  margin: 2vh auto;
+}
+
 @media (max-width: 860px) {
   .categoryBox {
     width: 100vw;
@@ -337,7 +342,7 @@ pre {
   display: inline-block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  padding-left: 5em;
+  padding-left: 3em;
   padding-right: 0.5em;
 }
 

@@ -8,6 +8,7 @@ import NotFound from "./NotFound.js";
 import CommunityWrite from "./CommunityWrite.js";
 import Post from "./Post.js";
 import Login from "./Login.tsx";
+import Signup from "./Signup.js";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
       <Route exact path="/communityWrite" component={CommunityWrite} />
       <Route exact path="/post" component={Post} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
       <Route component={NotFound} />
     </Switch>
   );
