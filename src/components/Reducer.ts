@@ -42,6 +42,15 @@ const reducer = (
     case "community":
       state.loc = "community";
       return state;
+    case "login":
+      state.loc = "login";
+      return state;
+    case "signup":
+      state.loc = "signup";
+      return state;
+    case "post":
+      state.loc = "post";
+      return state;
     default:
     // nothing
   }

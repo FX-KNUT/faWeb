@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Comment from "./Comment.js";
 import qs from "qs";
 
 const Post = ({ location }) => {
@@ -53,6 +54,7 @@ const Post = ({ location }) => {
             disabled
           />
         </div>
+        <Comment />
         <div className="postBtn">
           <Link to="/community" className="btn btn-primary ">
             돌아가기

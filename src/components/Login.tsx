@@ -14,21 +14,6 @@ import { store } from "./App";
 
 // }
 
-const allUsers = [
-  {
-    userId: "min",
-    userPw: "1234",
-  },
-  {
-    userId: "kim",
-    userPw: "1234",
-  },
-  {
-    userId: "park",
-    userPw: "1234",
-  },
-];
-
 const Login = (): JSX.Element => {
   // destructuring에 따른 Typing 방법
   let [id, setId]: [id: string, setId: Function] = useState("");
