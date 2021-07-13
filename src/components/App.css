@@ -27,6 +27,15 @@ header {
   background-color: white;
 }
 
+.toggle_header {
+  display: none;
+  position: absolute;
+  left: 26px;
+  top: 18px;
+  font-size: 1.2em;
+  z-index: 100;
+}
+
 .login_icon {
   position: absolute;
   top: 2vh;
@@ -286,7 +295,7 @@ pre {
   top: 4vh;
   width: 100%;
   height: calc(100% - 4vh);
-  padding: 0 10vw;
+  padding: 0 120px;
 }
 
 .main-profile-content {
@@ -295,14 +304,15 @@ pre {
   justify-content: center;
   height: 80%;
   background: #ebedee;
-  padding: 3vh 3vw;
-  grid-template-columns: repeat(3, 20vw);
+  padding: 20px 30px;
+  grid-template-columns: repeat(3, 290px);
   grid-template-rows: repeat(2, 30vh);
-  column-gap: 3vw;
-  row-gap: 3vh;
+  column-gap: 35px;
+  row-gap: 25px;
 }
 
 .profile_box {
+  min-width: 280px;
   height: 100%;
   background-color: white;
   position: relative;
@@ -322,10 +332,10 @@ pre {
 
 .profile_img {
   border-radius: 50%;
-  width: 4vw;
-  height: 9vh;
+  width: 75px;
+  height: 75px;
   position: absolute;
-  top: 8px;
+  top: 15px;
   left: 18px;
 }
 
@@ -337,9 +347,10 @@ pre {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2vw;
+  padding: 0;
+  width: 940px;
   margin: auto;
-  width: 83%;
+  min-width: 854px;
   height: 8%;
   background: orange;
 }
@@ -468,6 +479,7 @@ pre {
 }
 
 .post-date {
+  font-size: 1rem;
   flex: 1;
 }
 
@@ -536,11 +548,11 @@ pre {
 }
 
 .home {
-  background: #ffcdd2;
+  background: #ebedee;
 }
 
 .introduction {
-  background: rgb(133, 114, 168);
+  background: #ebedee;
 }
 
 .profile {
@@ -565,95 +577,33 @@ pre {
 
 /* 반응형 css */
 
-@media (max-width: 860px) {
+@media screen and (max-width: 1100px) {
+  .header {
+    display: none;
+  }
+
   .categoryBox {
-    width: 100vw;
-    max-height: 72px;
     transition: max-height 0.8s ease-out;
     flex-direction: column;
     align-items: center;
   }
-}
 
-@media (max-height: 500px) {
-  .main-introduction-content-professor-name {
-    top: 60%;
+  .toggle_header {
+    display: block;
+    cursor: pointer;
+  }
+
+  .header.active {
+    display: block;
   }
 }
 
-@media (max-height: 420px) {
-  .main-introduction-content-professor-name {
-    top: 63%;
+@media (max-width: 1400px) {
+  .main-profile-content {
+    column-gap: 35px;
+    row-gap: 25px;
   }
-}
-
-@media (max-width: 1280px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 172px;
-    height: 172px;
-  }
-}
-
-@media (max-width: 1080px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 885px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    margin: 0.5rem;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 800px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 680px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media (max-width: 960px),
-  (max-height: 720px) /*,
-  (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 600px),
-  (max-height: 480px) /*,
-  (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
-  body {
-    font-size: 12px;
-  }
-}
-
-@media (max-height: 600px) {
-  .main-introduction-content {
-    top: 3vh;
-  }
-}
-
-@media (max-height: 480px) {
-  .main-introduction-content {
-    top: 4.5vh;
+  .main-profile-pagination {
+    min-width: 854px;
   }
 }

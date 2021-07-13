@@ -47,9 +47,16 @@ function App(): JSX.Element {
     setInit(false);
   }, []);
 
+  const toggle_header = document.querySelector(".toggle_header");
+  const header = document.querySelector(".header");
+
+  toggle_header?.addEventListener("click", () => {
+    header!.classList.toggle("active");
+  });
+
   return (
     <div id="App" className="App">
-      <header>
+      <header className="header">
         <Header />
       </header>
       <main className="main">{init ? "Loading..." : <Router />}</main>
@@ -57,6 +64,9 @@ function App(): JSX.Element {
       <Link to="/login">
         <RiLoginBoxFill className="login_icon" />
       </Link>
+      <div className="toggle_header">
+        <i className="fas fa-bars"></i>
+      </div>
     </div>
   );
 }
