@@ -15,6 +15,8 @@ import { store } from "./App";
 // }
 
 const Login = (): JSX.Element => {
+  store.dispatch({ type: { loc: "login", loggedIn: "" } });
+
   // destructuring에 따른 Typing 방법
   let [id, setId]: [id: string, setId: Function] = useState("");
   let [pw, setPw]: [pw: string, setPw: Function] = useState("");

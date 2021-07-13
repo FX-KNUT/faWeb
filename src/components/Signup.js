@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
+import { store } from "./App";
 
 const Signup = () => {
+  store.dispatch({ type: { loc: "signup" } });
+
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [pw, setPw] = useState("");

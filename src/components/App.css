@@ -90,16 +90,6 @@ header {
   left: 20%;
 }
 
-@media (max-width: 860px) {
-  .categoryBox {
-    width: 100vw;
-    max-height: 72px;
-    transition: max-height 0.8s ease-out;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .categoryBox {
   display: flex;
   align-items: center;
@@ -250,18 +240,6 @@ pre {
   transform: translateX(-50%);
 }
 
-@media (max-height: 500px) {
-  .main-introduction-content-professor-name {
-    top: 60%;
-  }
-}
-
-@media (max-height: 420px) {
-  .main-introduction-content-professor-name {
-    top: 63%;
-  }
-}
-
 .main-introduction-content-professor-prevbtn,
 .main-introduction-content-professor-nextbtn {
   position: absolute;
@@ -276,49 +254,6 @@ pre {
   margin: 2rem 2rem;
   left: unset;
   right: 20%;
-}
-
-@media (max-width: 1280px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 172px;
-    height: 172px;
-  }
-}
-
-@media (max-width: 1080px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 885px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    margin: 0.5rem;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 800px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 680px) {
-  .main-introduction-content-professor-prevbtn,
-  .main-introduction-content-professor-nextbtn {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-introduction-content-professor-imgdiv-innerdiv {
-    width: 48px;
-    height: 48px;
-  }
 }
 
 .main-introduction-content-dept_software_wrapper::before {
@@ -620,6 +555,81 @@ pre {
   background: #ebedee;
 }
 
+.login {
+  background: #ebedee;
+}
+
+.signup {
+  background: #ebedee;
+}
+
+/* 반응형 css */
+
+@media (max-width: 860px) {
+  .categoryBox {
+    width: 100vw;
+    max-height: 72px;
+    transition: max-height 0.8s ease-out;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-height: 500px) {
+  .main-introduction-content-professor-name {
+    top: 60%;
+  }
+}
+
+@media (max-height: 420px) {
+  .main-introduction-content-professor-name {
+    top: 63%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 172px;
+    height: 172px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 885px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    margin: 0.5rem;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-introduction-content-professor-prevbtn,
+  .main-introduction-content-professor-nextbtn {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-introduction-content-professor-imgdiv-innerdiv {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 @media (max-width: 960px),
   (max-height: 720px) /*,
   (orientation: landscape) */ /* 가로 모드일 때 지정 */ {
@@ -646,8 +656,4 @@ pre {
   .main-introduction-content {
     top: 4.5vh;
   }
-}
-
-.show {
-  display: block;
 }

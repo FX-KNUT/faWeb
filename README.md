@@ -6,6 +6,10 @@ PM | 신이종(Leejong Shin)
 Front-end | 신이종, 민경호(GyeongHo Min)
 Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 
+# 20210714
+
+- 해야할 일: 반응형 css 작업.
+
 # 20210712
 
 - 로그인 화면
