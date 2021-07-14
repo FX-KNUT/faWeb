@@ -20,9 +20,9 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 0vh;
+  height: 70px;
   transition: 0.3s ease-in-out;
-  visibility: hidden;
+  visibility: visible;
   font-size: 1rem;
   line-height: 100%;
   z-index: 99;
@@ -297,7 +297,7 @@ pre {
   top: 4vh;
   width: 100%;
   height: calc(100% - 4vh);
-  padding: 0 120px;
+  padding: 0 10vw;
 }
 
 .main-profile-content {
@@ -352,7 +352,6 @@ pre {
   padding: 0;
   width: 940px;
   margin: auto;
-  min-width: 854px;
   height: 8%;
   background: orange;
 }
@@ -483,6 +482,7 @@ pre {
 .post-date {
   font-size: 1rem;
   flex: 1;
+  overflow-y: hidden;
 }
 
 .writePageBtn {
@@ -580,9 +580,10 @@ pre {
 /* 반응형 css */
 
 @media screen and (max-width: 1100px) {
-  /* .header {
-    display: none;
-  } */
+  .header {
+    visibility: none;
+    height: 0vh;
+  }
 
   .categoryBox {
     flex-direction: column;
@@ -595,17 +596,12 @@ pre {
   }
 
   .header.active {
-    /* display: block; */
     visibility: visible;
     height: 200px;
   }
 }
 
 @media (max-width: 1400px) {
-  .main-profile-content {
-    column-gap: 35px;
-    row-gap: 25px;
-  }
   .main-profile-pagination {
     min-width: 854px;
   }

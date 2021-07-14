@@ -9,6 +9,7 @@ Back-end | 김규영(Kyuyung Kim), 이진형(Jinhyung Lee), 아크롬(Akrom)
 # 20210714
 
 - 해야할 일: 반응형 css 작업.
+  ![image](https://user-images.githubusercontent.com/57670160/125578459-81e28f0e-3516-4e08-86c5-1765e13a231c.png)
 
 # 20210712
 
