@@ -54,13 +54,13 @@ const Post = ({ location }) => {
             disabled
           />
         </div>
-        <Comment />
-        <div className="postBtn">
-          <Link to="/community" className="btn btn-primary ">
-            돌아가기
-          </Link>
-        </div>
       </form>
+      <Comment />
+      <div className="postBtn">
+        <Link to="/community" className="btn btn-primary ">
+          돌아가기
+        </Link>
+      </div>
     </div>
   );
 };

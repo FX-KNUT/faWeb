@@ -1,14 +1,23 @@
+import { useState } from "react";
+
 const Comment = () => {
+  const [comment, setComment] = useState("");
+
   // axios
 
   const onCommentSubmit = (e) => {
     e.preventDefault();
   };
 
+  const onChange = (e) => {
+    setComment(e.target.value);
+  };
+
   return (
     <div className="comment">
       <div>Comment</div>
-      <div></div>
+      {/* 조회 */}
+      <div>asd</div>
       <form
         className="row g-3"
         action=""
@@ -18,23 +27,15 @@ const Comment = () => {
         <div className="col-auto">
           <input
             type="text"
-            disabled
-            className="form-control-plaintext"
-            value="UserName"
-          />
-        </div>
-        <div class="col-auto">
-          <input
-            type="password"
             className="form-control"
             placeholder="Comment"
+            value={comment}
+            onChange={onChange}
           />
         </div>
-        <div className="col-auto">
-          <button type="submit" className="btn btn-primary mb-3">
-            등록
-          </button>
-        </div>
+        <button type="submit" className="btn btn-primary mb-3 col-auto">
+          등록
+        </button>
       </form>
     </div>
   );

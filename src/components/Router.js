@@ -9,6 +9,7 @@ import CommunityWrite from "./CommunityWrite.js";
 import Post from "./Post.js";
 import Login from "./Login.tsx";
 import Signup from "./Signup.js";
+// import React from "react";
 
 const AppRouter = () => {
   return (
