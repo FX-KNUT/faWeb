@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { store } from "./App";
+import { SERVERURL, SERVERPORT } from "./Constants";
+import axios from "axios";
 
 const Signup = () => {
   store.dispatch({ type: { loc: "signup" } });
@@ -49,8 +51,26 @@ const Signup = () => {
     backgroundColor: backgorundColor,
   };
 
+  const requestSignup = async (SignupDTO) => {
+    const request = await axios.post(`${SERVERURL}:${SERVERPORT}`, {
+      SignupDTO,
+    });
+    console.log(request);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    const SignupDTO = {
+      id,
+      name,
+      pw,
+      start_date,
+      end_date,
+      img,
+      backgorundColor,
+    };
+    const request = requestSignup(SignupDTO);
+    console.log(request);
   };
 
   var image;
@@ -147,7 +167,7 @@ const Signup = () => {
             리셋
           </button>
           <button type="submit" className="btn btn-primary">
-            로그인
+            회원가입
           </button>
           <Link to="/login" className="btn btn-primary">
             돌아가기

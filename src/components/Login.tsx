@@ -1,18 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { store } from "./App";
-// import { SERVERURL, SERVERPORT } from './Constants';
-// import axios from 'axios';
+import { SERVERURL, SERVERPORT } from "./Constants";
+import axios from "axios";
 
 // 백엔드와 교환할 데이터에 대한 정보를 인터페이스에 즉각 메모하세요.
 // 이것 또한 협업과정에서 타입스크립트가 가져다 주는 큰 장점들 중 하나입니다.
-// interface User { // 받는 유저 정보의 스키마
+interface User {
+  // 받는 유저 정보의 스키마
+  id: string;
+  pw: string;
+}
 
-// }
-
-// interface UserDTO { // 보내는 유저 정보의 스키마
-
-// }
+interface UserDTO {
+  // 보내는 유저 정보의 스키마
+  id: string;
+  pw: string;
+}
 
 const Login = (): JSX.Element => {
   store.dispatch({ type: { loc: "login", loggedIn: "" } });
@@ -40,28 +44,24 @@ const Login = (): JSX.Element => {
   // axios를 좀 더 날렵하게 custom하는 방법도 요긴하게 사용될 수 있습니다.
   // 소규모 프로젝트에선 상관 없지만, 큰 프로젝트에선 DRY한 코드를 위해
   // axios를 Hook처럼 커스텀하여 사용할 수 있습니다.
-  // const requsetUserInfo = async (UserDTO: UserDTO) => {
-  //     // axios를 하단 코드처럼 사용하지 않고
-  //     // axios({ method: 'post', ... }) 처럼 사용해도 좋습니다.
-  //     const res: User =
-  //         await axios.get(`${SERVERURL}:${SERVERPORT}`, UserDTO);
-  //     return res;
-  // }
+  const requsetUserInfo = async (UserDTO: UserDTO) => {
+    // axios를 하단 코드처럼 사용하지 않고
+    // axios({ method: 'post', ... }) 처럼 사용해도 좋습니다.
+    const res: User = await axios.post(`${SERVERURL}:${SERVERPORT}`, {
+      UserDTO,
+    });
+    return res;
+  };
 
   // 패키지에 axios 설치 되어 있습니다. axios 사용하세요.
-  // const onSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
-  //     e.preventDefault();
-  //     const UserDTO: UserDTO = {
-  //         id,
-  //         pw
-  //     }
-  //     const res = requsetUserInfo(UserDTO);
-  //     console.log(res);
-  // }
-
-  // 원래 submit을 하면 id와 pw이 서버로 전송됨. 서버에서 일치하는지 판단 후 res를 줌.
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    const UserDTO: UserDTO = {
+      id,
+      pw,
+    };
+    const res = requsetUserInfo(UserDTO);
+    console.log(res);
   };
 
   return (

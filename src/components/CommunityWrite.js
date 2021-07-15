@@ -1,3 +1,5 @@
+import axios from "axios";
+import { SERVERURL, SERVERPORT } from "./Constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,8 +23,22 @@ const CommunityWrite = () => {
   //
   // };
 
+  const requestPostInfo = async (PostDTO) => {
+    const response = await axios.post(`${SERVERURL}:${SERVERPORT}`, {
+      PostDTO,
+    });
+    console.log(response);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    const PostDTO = {
+      title,
+      content,
+      file,
+    };
+    const response = requestPostInfo(PostDTO);
+    console.log(response);
   };
 
   return (
