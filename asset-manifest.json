@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fxweb/static/css/main.756e9fa7.chunk.css",
-    "main.js": "/fxweb/static/js/main.8c7659ac.chunk.js",
-    "main.js.map": "/fxweb/static/js/main.8c7659ac.chunk.js.map",
+    "main.js": "/fxweb/static/js/main.cfcf678d.chunk.js",
+    "main.js.map": "/fxweb/static/js/main.cfcf678d.chunk.js.map",
     "runtime-main.js": "/fxweb/static/js/runtime-main.20a9895e.js",
     "runtime-main.js.map": "/fxweb/static/js/runtime-main.20a9895e.js.map",
     "static/js/2.721a4e15.chunk.js": "/fxweb/static/js/2.721a4e15.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.20a9895e.js",
     "static/js/2.721a4e15.chunk.js",
     "static/css/main.756e9fa7.chunk.css",
-    "static/js/main.8c7659ac.chunk.js"
+    "static/js/main.cfcf678d.chunk.js"
   ]
 }
