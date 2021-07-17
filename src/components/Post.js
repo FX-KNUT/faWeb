@@ -6,8 +6,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Post = ({ location }) => {
-  const file = "";
-
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true, // 문자열 맨 앞의 ?를 생략
   });
@@ -22,9 +20,7 @@ const Post = ({ location }) => {
     const fetchPost = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(
-          `https://jsonplaceholder.typicode.com/posts/${idx}`
-        );
+        const response = await axios.get(`http://localhost:8080/post/${idx}`);
         setPost(response.data);
       } catch (e) {
         console.log(e);
@@ -41,6 +37,7 @@ const Post = ({ location }) => {
   if (!post) {
     return null;
   }
+  console.log(post);
 
   return (
     <div className="write">
@@ -53,7 +50,7 @@ const Post = ({ location }) => {
             type="email"
             className="form-control"
             id="exampleFormControlInput1"
-            value={post.title}
+            value={post.subjectName}
             disabled
           />
         </div>
@@ -65,7 +62,7 @@ const Post = ({ location }) => {
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="8"
-            value={post.body}
+            value={post.content}
             disabled
           ></textarea>
         </div>
@@ -77,7 +74,7 @@ const Post = ({ location }) => {
             className="form-control"
             type="file"
             id="formFileMultiple"
-            value={file}
+            value={post.file.fileName}
             multiple
             disabled
           />

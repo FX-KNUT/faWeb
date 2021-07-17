@@ -20,7 +20,7 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 70px;
+  height: 8vh;
   transition: 0.3s ease-in-out;
   visibility: visible;
   font-size: 1rem;

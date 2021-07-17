@@ -2,6 +2,8 @@ const CommunityPostlist = ({ currPostList, history }) => {
   return (
     <div className="main-community-posts-body">
       {currPostList.map((post) => {
+        const date = post.date.substr(0, 10);
+
         return (
           <div className="post" key={post.id}>
             <span className="post-idx">{post.id}</span>
@@ -9,10 +11,10 @@ const CommunityPostlist = ({ currPostList, history }) => {
               className="post-title"
               onClick={() => history.push(`/post?idx=${post.id}`)}
             >
-              {post.title}
+              {post.subjectName}
             </span>
-            <span className="post-author">{post.author}</span>
-            <span className="post-date">{post.date}</span>
+            <span className="post-author">{post.userid}</span>
+            <span className="post-date">{date}</span>
           </div>
         );
       })}
