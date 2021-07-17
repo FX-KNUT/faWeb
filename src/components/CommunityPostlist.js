@@ -3,11 +3,11 @@ const CommunityPostlist = ({ currPostList, history }) => {
     <div className="main-community-posts-body">
       {currPostList.map((post) => {
         return (
-          <div className="post" key={post.idx}>
-            <span className="post-idx">{post.idx}</span>
+          <div className="post" key={post.id}>
+            <span className="post-idx">{post.id}</span>
             <span
               className="post-title"
-              onClick={() => history.push(`/post?idx=${post.idx}`)}
+              onClick={() => history.push(`/post?idx=${post.id}`)}
             >
               {post.title}
             </span>

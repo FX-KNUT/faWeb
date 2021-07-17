@@ -62,6 +62,9 @@ const Login = (): JSX.Element => {
     };
     const res = requsetUserInfo(UserDTO);
     console.log(res);
+    // store에 dispatch
+    store.dispatch({ type: { loc: "home", loggedIn: "true" } });
+    console.log(store.getState().loggedIn);
   };
 
   return (

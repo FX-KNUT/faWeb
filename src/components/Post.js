@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import Comment from "./Comment.js";
 import qs from "qs";
-import { SERVERURL, SERVERPORT } from "./Constants";
+// import { SERVERURL, SERVERPORT } from "./Constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Post = ({ location }) => {
-  const title = "";
-  const content = "";
   const file = "";
 
   const query = qs.parse(location.search, {
@@ -25,7 +23,7 @@ const Post = ({ location }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${SERVERURL}:${SERVERPORT}?idx=${idx}`
+          `https://jsonplaceholder.typicode.com/posts/${idx}`
         );
         setPost(response.data);
       } catch (e) {
@@ -34,7 +32,7 @@ const Post = ({ location }) => {
       setLoading(false);
     };
     fetchPost();
-  }, [post]);
+  }, [idx]);
 
   if (loading) {
     return <div>loading...</div>;
@@ -55,7 +53,7 @@ const Post = ({ location }) => {
             type="email"
             className="form-control"
             id="exampleFormControlInput1"
-            value={title}
+            value={post.title}
             disabled
           />
         </div>
@@ -67,7 +65,7 @@ const Post = ({ location }) => {
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="8"
-            value={content}
+            value={post.body}
             disabled
           ></textarea>
         </div>
