@@ -1,15 +1,16 @@
 import { Switch, Route } from "react-router-dom";
-import Home from "./Home.js";
-import ProfileList from "./ProfileList.js";
-import Introduction from "./Introduction.js";
-import Location from "./Location.js";
-import Community from "./Community.js";
-import NotFound from "./NotFound.js";
-import CommunityWrite from "./CommunityWrite.js";
-import Post from "./Post.js";
-import Login from "./Login.tsx";
-import Signup from "./Signup.js";
-// import React from "react";
+import loadable from "@loadable/component";
+
+const Home = loadable(() => import("./Home"));
+const ProfileList = loadable(() => import("./ProfileList"));
+const Introduction = loadable(() => import("./Introduction"));
+const Location = loadable(() => import("./Location"));
+const Community = loadable(() => import("./Community"));
+const Post = loadable(() => import("./Post"));
+const Login = loadable(() => import("./Login"));
+const Signup = loadable(() => import("./Signup"));
+const NotFound = loadable(() => import("./NotFound"));
+const CommunityWrite = loadable(() => import("./CommunityWrite"));
 
 const AppRouter = () => {
   return (
