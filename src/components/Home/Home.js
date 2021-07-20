@@ -1,4 +1,4 @@
-import { store } from "./App.tsx";
+import { store } from "../App.tsx";
 
 const Home = () => {
   store.dispatch({ type: { loc: "home" } });

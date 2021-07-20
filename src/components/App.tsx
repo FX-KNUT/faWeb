@@ -1,9 +1,9 @@
 import "./App.css";
 import { createStore } from "redux";
-import Header from "./Header.js";
+import Header from "./Header/Header.js";
 import reducer from "./Reducer";
 import Router from "./Router.js";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 

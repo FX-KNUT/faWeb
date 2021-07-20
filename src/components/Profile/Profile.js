@@ -27,6 +27,7 @@ const Profile = ({ profile }) => {
     <div className="profile_box">
       <div className="profile_color" style={backgroundColor}></div>
       <div className="profile_content">
+        <img src={img} alt={img} className="profile_img" />
         <h2 className="profile_name">{name}</h2>({id})
         <div className="profile_date">
           <br />
@@ -35,7 +36,6 @@ const Profile = ({ profile }) => {
           탈퇴일: {end_date}
         </div>
       </div>
-      <img src={img} alt={img} className="profile_img" />
     </div>
   );
 };

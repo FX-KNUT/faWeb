@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SERVERURL, SERVERPORT } from "./Constants";
+import { SERVERURL, SERVERPORT } from "../Constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

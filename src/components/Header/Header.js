@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
+import { MdHome } from "react-icons/md";
+// {
+//   name: "fxweb",
+//   text: <MdHome />,
+// },
 const category = [
-  {
-    name: "fxweb",
-    text: "Home",
-  },
   {
     name: "introduction",
     text: "Introduction",
@@ -26,6 +26,9 @@ const category = [
 const Header = () => {
   return (
     <nav className="categoryBox">
+      <Link to="fxweb" className="home_icon_wrapper">
+        <MdHome className="home_icon" />
+      </Link>
       {category.map((c) => (
         <NavLink
           to={c.name}

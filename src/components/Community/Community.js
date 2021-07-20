@@ -1,7 +1,7 @@
 import axios from "axios";
-import { SERVERURL, SERVERPORT } from "./Constants";
+import { SERVERURL, SERVERPORT } from "../Constants";
 import { useEffect, useState } from "react";
-import { store } from "./App.tsx";
+import { store } from "../App";
 import CommunityPagination from "./CommunityPagination";
 import CommunityPostlist from "./CommunityPostlist";
 

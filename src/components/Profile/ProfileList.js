@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { store } from "./App.tsx";
+import { store } from "../App.tsx";
 import ProfilePagination from "./ProfilePagination";
 import ProfilePage from "./ProfilePage";
-import shine from "./res/image/shine.png";
+import shine from "../res/image/shine.png";
 
 const profileList = [
   {

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { store } from "./App";
-import { SERVERURL, SERVERPORT } from "./Constants";
+import { store } from "../App";
+import { SERVERURL, SERVERPORT } from "../Constants";
 import axios from "axios";
 
 const Signup = () => {
@@ -14,7 +14,7 @@ const Signup = () => {
   const [start_date, setStartDate] = useState("");
   const [end_date, setEndDate] = useState("");
   const [img, setImg] = useState("");
-  const [backgorundColor, setBackgroundColor] = useState("black");
+  const [backgorundColor, setBackgroundColor] = useState("#000000");
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -102,6 +102,7 @@ const Signup = () => {
           <div className="profile_box">
             <div className="profile_color" style={backColor}></div>
             <div className="profile_content">
+              <div className="signup_img">{image}</div>
               <div className="form-floating mb-3 signup_name">
                 <input
                   type="text"
@@ -154,8 +155,6 @@ const Signup = () => {
                 />
               </div>
             </div>
-            {image}
-            <div className="signup_img"></div>
           </div>
         </div>
         <div className="button_wrapper">

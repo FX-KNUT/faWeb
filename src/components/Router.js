@@ -1,16 +1,16 @@
 import { Switch, Route } from "react-router-dom";
 import loadable from "@loadable/component";
 
-const Home = loadable(() => import("./Home"));
-const ProfileList = loadable(() => import("./ProfileList"));
+const Home = loadable(() => import("./Home/Home"));
+const ProfileList = loadable(() => import("./Profile/ProfileList"));
 const Introduction = loadable(() => import("./Introduction"));
 const Location = loadable(() => import("./Location"));
-const Community = loadable(() => import("./Community"));
-const Post = loadable(() => import("./Post"));
-const Login = loadable(() => import("./Login"));
-const Signup = loadable(() => import("./Signup"));
-const NotFound = loadable(() => import("./NotFound"));
-const CommunityWrite = loadable(() => import("./CommunityWrite"));
+const Community = loadable(() => import("./Community/Community"));
+const Post = loadable(() => import("./Community/Post"));
+const Login = loadable(() => import("./Header/Login"));
+const Signup = loadable(() => import("./Header/Signup"));
+const NotFound = loadable(() => import("./Header/NotFound"));
+const CommunityWrite = loadable(() => import("./Community/CommunityWrite"));
 
 const AppRouter = () => {
   return (

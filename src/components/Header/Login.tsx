@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { store } from "./App";
-import { SERVERURL, SERVERPORT } from "./Constants";
+import { store } from "../App";
+// import { SERVERURL, SERVERPORT } from "./Constants";
 import axios from "axios";
 
 // 백엔드와 교환할 데이터에 대한 정보를 인터페이스에 즉각 메모하세요.
@@ -18,7 +18,7 @@ interface UserDTO {
   pw: string;
 }
 
-const Login = (): JSX.Element => {
+const Login = ({ history }: any): JSX.Element => {
   store.dispatch({ type: { loc: "login", loggedIn: "" } });
 
   // destructuring에 따른 Typing 방법
@@ -47,7 +47,7 @@ const Login = (): JSX.Element => {
   const requsetUserInfo = async (UserDTO: UserDTO) => {
     // axios를 하단 코드처럼 사용하지 않고
     // axios({ method: 'post', ... }) 처럼 사용해도 좋습니다.
-    const res: User = await axios.post(`${SERVERURL}:${SERVERPORT}`, {
+    const res: User = await axios.post(`http://localhost:8080`, {
       UserDTO,
     });
     return res;
@@ -62,8 +62,12 @@ const Login = (): JSX.Element => {
     };
     const res = requsetUserInfo(UserDTO);
     console.log(res);
+    // res가 true인지 false인지 확인
+
     // store에 dispatch
     store.dispatch({ type: { loc: "home", loggedIn: "true" } });
+    history.push("/fxweb");
+    console.log(store.getState().loc);
     console.log(store.getState().loggedIn);
   };
 
