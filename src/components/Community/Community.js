@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SERVERURL, SERVERPORT } from "../Constants";
+import { SERVERPORT } from "../Constants";
 import { useEffect, useState } from "react";
 import { store } from "../App";
 import CommunityPagination from "./CommunityPagination";
@@ -18,7 +18,7 @@ const Community = ({ history }) => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `${SERVERURL}:${SERVERPORT}/community` // localhost:8080/community
+          `http://localhost:${SERVERPORT}/community` // localhost:8080/community
         );
         setPostlist(response.data);
       } catch (e) {

@@ -1,67 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { store } from "../App.tsx";
 import ProfilePagination from "./ProfilePagination";
 import ProfilePage from "./ProfilePage";
-import shine from "../res/image/shine.png";
-
-const profileList = [
-  {
-    idx: 0,
-    id: "1234567",
-    name: "김김김",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 1,
-    id: "1234567",
-    name: "s",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 2,
-    id: "1234567",
-    name: "a",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 3,
-    id: "1234567",
-    name: "r",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 4,
-    id: "1234567",
-    name: "e",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 5,
-    id: "1234567",
-    name: "w",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-  {
-    idx: 6,
-    id: "1234567",
-    name: "q",
-    img: shine,
-    start_date: "2021-01-01",
-    end_date: "2021-12-31",
-  },
-];
+import axios from "axios";
+import { SERVERPORT } from "../Constants";
 
 const ProfileList = () => {
   store.dispatch({ type: { loc: "profile" } });
@@ -77,6 +19,33 @@ const ProfileList = () => {
     const currProfile = tmp.slice(indexOfFirst, indexOfLast);
     return currProfile;
   };
+
+  const [profileList, setProfileList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // axios
+  useEffect(() => {
+    const fetchProfile = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`http://localhost:${SERVERPORT}/profile`);
+        setProfileList(res.data);
+      } catch (e) {
+        console.error(e);
+      }
+      setLoading(true);
+    };
+    fetchProfile();
+  }, [profileList]);
+
+  if (loading) {
+    return <div>loading...</div>;
+  }
+
+  if (!profileList) {
+    return null;
+  }
+
   // arr의 map 함수 내 _는 ele 인자를 사용하지 않겠다는 것을
   // 암시적으로 나타내는 minify입니다. 일종의 convention이니,
   // 익혀두시면 다음에 다른 코드를 볼 때 또 보실 일이 있을 겁니다.
